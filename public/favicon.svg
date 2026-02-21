@@ -1,15 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Rocket nose -->
-  <polygon points="16,2 8,12 24,12" fill="#00d9ff"/>
-  <!-- Rocket body -->
-  <rect x="8" y="12" width="16" height="13" fill="#00d9ff" opacity="0.15" stroke="#00d9ff" stroke-width="1.5"/>
-  <!-- Checklist checkmark inside body -->
-  <polyline points="11,18 14,22 21,15" stroke="#00d9ff" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
-  <!-- Left fin -->
-  <polygon points="8,20 3,28 8,28" fill="#00d9ff" opacity="0.7"/>
-  <!-- Right fin -->
-  <polygon points="24,20 29,28 24,28" fill="#00d9ff" opacity="0.7"/>
-  <!-- Exhaust -->
-  <polygon points="12,25 16,25 14,31" fill="#c9004f"/>
-  <polygon points="16,25 20,25 18,31" fill="#ffbe0b"/>
+  <!-- Dark background for contrast on any browser chrome -->
+  <rect width="32" height="32" rx="6" fill="#0a0e27"/>
+
+  <!-- Rocket body - solid, bold -->
+  <rect x="10" y="10" width="12" height="14" rx="1" fill="#00d9ff"/>
+
+  <!-- Rocket nose cone -->
+  <polygon points="16,3 10,10 22,10" fill="#00d9ff"/>
+
+  <!-- Checkmark cut into body - dark stroke for contrast -->
+  <polyline points="12.5,16 15,19 19.5,13" stroke="#0a0e27" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Exhaust flames - magenta + yellow -->
+  <polygon points="12,24 14.5,24 13,29" fill="#c9004f"/>
+  <polygon points="17.5,24 20,24 19,29" fill="#ffbe0b"/>
 </svg>
