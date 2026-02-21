@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Unbounded:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* =====================================================
+   SHIPKIT CYBERPUNK DESIGN SYSTEM
+   ===================================================== */
+
+:root {
+  /* Cyberpunk Neon Colors */
+  --cyberpunk-primary: #00d9ff;
+  --cyberpunk-primary-dark: #00a8cc;
+  --cyberpunk-primary-light: #33e6ff;
+
+  --cyberpunk-accent: #c9004f;
+  --cyberpunk-accent-dark: #990042;
+  --cyberpunk-accent-light: #e6005f;
+
+  --cyberpunk-highlight: #ffbe0b;
+  --cyberpunk-highlight-dark: #ccaa08;
+  --cyberpunk-highlight-light: #ffd633;
+
+  /* Dark Backgrounds */
+  --cyberpunk-dark: #0a0e27;
+  --cyberpunk-dark-secondary: #0f1535;
+  --cyberpunk-surface: #151932;
+  --cyberpunk-surface-light: #1a1f3a;
+
+  /* Text Colors */
+  --cyberpunk-text: #f0f3f5;
+  --cyberpunk-text-secondary: #a8b5c6;
+  --cyberpunk-text-tertiary: #6b7684;
+
+  /* Borders */
+  --cyberpunk-border: rgba(0, 217, 255, 0.2);
+  --cyberpunk-border-strong: rgba(0, 217, 255, 0.4);
+
+  /* Fonts */
+  --font-display: "Unbounded", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* =====================================================
+   GLOBAL BASE STYLES
+   ===================================================== */
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background: var(--cyberpunk-dark);
+  color: var(--cyberpunk-text);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  background: var(--cyberpunk-dark);
+  color: var(--cyberpunk-text);
+  font-family: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Sharp edges everywhere — no border-radius */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1), 0 0 0 5px var(--cyberpunk-primary);
+}
+
+/* Cyberpunk scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cyberpunk-dark-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyberpunk-border-strong);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyberpunk-primary);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =====================================================
+   COMPONENT BASE STYLES
+   ===================================================== */
+
+/* Buttons */
+button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Primary Button */
+.btn-primary {
+  background: var(--cyberpunk-primary);
+  color: var(--cyberpunk-dark);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--cyberpunk-primary-light);
+  box-shadow: 0 0 16px rgba(0, 217, 255, 0.4);
+}
+
+/* Accent Button */
+.btn-accent {
+  background: var(--cyberpunk-accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-accent:hover:not(:disabled) {
+  background: var(--cyberpunk-accent-light);
+  box-shadow: 0 0 16px rgba(201, 0, 79, 0.4);
+}
+
+/* Highlight Button */
+.btn-highlight {
+  background: var(--cyberpunk-highlight);
+  color: var(--cyberpunk-dark);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-highlight:hover:not(:disabled) {
+  background: var(--cyberpunk-highlight-light);
+  box-shadow: 0 0 16px rgba(255, 190, 11, 0.4);
+}
+
+/* Ghost Button */
+.btn-ghost {
+  background: transparent;
+  color: var(--cyberpunk-primary);
+  border: 2px solid var(--cyberpunk-primary);
+  padding: 0.625rem 1.375rem;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: rgba(0, 217, 255, 0.1);
+  box-shadow: 0 0 16px rgba(0, 217, 255, 0.3);
+}
+
+/* Input Fields */
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+  background: var(--cyberpunk-surface);
+  color: var(--cyberpunk-text);
+  border: 2px solid var(--cyberpunk-border);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  background: var(--cyberpunk-surface-light);
+  border-color: var(--cyberpunk-primary);
+  box-shadow: 0 0 12px rgba(0, 217, 255, 0.2);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--cyberpunk-text-tertiary);
+}
+
+/* Cards */
+.card {
+  background: var(--cyberpunk-surface);
+  border: 1px solid var(--cyberpunk-border);
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  border-color: var(--cyberpunk-border-strong);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.15);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.badge-primary {
+  background: rgba(0, 217, 255, 0.15);
+  color: var(--cyberpunk-primary-light);
+  border: 1px solid var(--cyberpunk-primary);
+}
+
+.badge-accent {
+  background: rgba(201, 0, 79, 0.15);
+  color: var(--cyberpunk-accent-light);
+  border: 1px solid var(--cyberpunk-accent);
+}
+
+.badge-highlight {
+  background: rgba(255, 190, 11, 0.15);
+  color: var(--cyberpunk-highlight);
+  border: 1px solid var(--cyberpunk-highlight);
+}
+
+.badge-success {
+  background: rgba(0, 255, 136, 0.15);
+  color: #00ff88;
+  border: 1px solid #00ff88;
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 217, 255, 0.3); }
+  50% { box-shadow: 0 0 24px rgba(0, 217, 255, 0.6); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Animation utility classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* =====================================================
+   UTILITY CLASSES
+   ===================================================== */
+
+/* Text */
+.text-primary { color: var(--cyberpunk-primary); }
+.text-accent { color: var(--cyberpunk-accent); }
+.text-highlight { color: var(--cyberpunk-highlight); }
+.text-secondary { color: var(--cyberpunk-text-secondary); }
+.text-muted { color: var(--cyberpunk-text-tertiary); }
+
+/* Backgrounds */
+.bg-surface { background: var(--cyberpunk-surface); }
+.bg-surface-light { background: var(--cyberpunk-surface-light); }
+.bg-dark { background: var(--cyberpunk-dark); }
+.bg-dark-secondary { background: var(--cyberpunk-dark-secondary); }
+
+/* Borders */
+.border-primary {
+  border: 1px solid var(--cyberpunk-primary);
+}
+
+.border-primary-glow {
+  border: 2px solid var(--cyberpunk-primary);
+  box-shadow: 0 0 12px rgba(0, 217, 255, 0.2);
+}
+
+.border-accent {
+  border: 1px solid var(--cyberpunk-accent);
+}
+
+/* Layout */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Neon text glow effect */
+.text-glow {
+  text-shadow: 0 0 10px var(--cyberpunk-primary), 0 0 20px rgba(0, 217, 255, 0.4);
+}
+
+.text-glow-accent {
+  text-shadow: 0 0 10px var(--cyberpunk-accent), 0 0 20px rgba(201, 0, 79, 0.4);
+}

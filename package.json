@@ -1,0 +1,30 @@
+{
+  "name": "shipkit",
+  "version": "0.1.0",
+  "description": "ShipKit — The launch checklist for indie developers",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
+  },
+  "dependencies": {
+    "@sentry/vue": "^10.39.0",
+    "@supabase/supabase-js": "^2.97.0",
+    "@unhead/vue": "^2.1.4",
+    "pinia": "^3.0.4",
+    "stripe": "^20.3.1",
+    "vue": "^3.5.25",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@netlify/vite-plugin": "^2.10.2",
+    "@tailwindcss/vite": "^4.2.0",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "tailwindcss": "^4.2.0",
+    "vite": "^7.3.1"
+  }
+}

@@ -1,0 +1,33 @@
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Netlify
+.netlify
+
+# Test output
+test-results/
+playwright-report/
+coverage/
