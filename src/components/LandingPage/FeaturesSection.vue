@@ -37,9 +37,9 @@ const features = [
     title: 'AI-Powered Copy Generation',
     accentColor: 'var(--cyberpunk-primary)',
     description:
-      'Tell ShipKit what your app does and it generates your positioning statement, hero copy, email sequences, and launch posts. No blank-page paralysis.',
+      'Tell LaunchPilot what your app does and it generates your positioning statement, hero copy, email sequences, and launch posts. No blank-page paralysis.',
     example:
-      '"Write my Product Hunt tagline" → ShipKit outputs 3 variants in 10 seconds, tailored to your target customer.'
+      '"Write my Product Hunt tagline" → LaunchPilot outputs 3 variants in 10 seconds, tailored to your target customer.'
   },
   {
     icon: '📋',

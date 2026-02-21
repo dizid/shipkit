@@ -5,7 +5,7 @@
         <span class="badge badge-primary">The system</span>
         <h2 class="section__title">4 phases. 32 tasks.<br>One clear path to customers.</h2>
         <p class="section__subtitle">
-          ShipKit gives you the exact playbook in the right order, with AI doing the heavy lifting on copy and templates.
+          LaunchPilot gives you the exact playbook in the right order, with AI doing the heavy lifting on copy and templates.
         </p>
       </div>
 

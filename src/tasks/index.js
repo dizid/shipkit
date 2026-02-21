@@ -1,5 +1,5 @@
 /**
- * ShipKit Task Registry — Single Source of Truth
+ * LaunchPilot Task Registry — Single Source of Truth
  *
  * Import this file anywhere you need task data. Do NOT import
  * individual phase files directly in components — always go through here.

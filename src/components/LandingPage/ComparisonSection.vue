@@ -2,25 +2,25 @@
   <section id="comparison" class="comparison section">
     <div class="section__inner">
       <div class="section__header">
-        <span class="badge badge-primary">Why ShipKit</span>
+        <span class="badge badge-primary">Why LaunchPilot</span>
         <h2 class="section__title">You've tried the alternatives.<br>Here's the difference.</h2>
       </div>
 
       <div class="comparison__grid">
         <div v-for="item in comparisons" :key="item.vs" class="card comparison__card">
           <div class="comparison__vs-header">
-            <span class="comparison__vs-label">ShipKit vs</span>
+            <span class="comparison__vs-label">LaunchPilot vs</span>
             <h3 class="comparison__vs-name">{{ item.vs }}</h3>
           </div>
 
           <div class="comparison__cols">
-            <!-- ShipKit column -->
-            <div class="comparison__col comparison__col--shipkit">
+            <!-- LaunchPilot column -->
+            <div class="comparison__col comparison__col--ours">
               <div class="comparison__col-header">
-                <span class="comparison__col-badge comparison__col-badge--shipkit">ShipKit</span>
+                <span class="comparison__col-badge comparison__col-badge--ours">LaunchPilot</span>
               </div>
               <ul class="comparison__list">
-                <li v-for="point in item.shipkit" :key="point">
+                <li v-for="point in item.ours" :key="point">
                   <span class="comparison__icon comparison__icon--win">✓</span>
                   {{ point }}
                 </li>
@@ -53,7 +53,7 @@
 const comparisons = [
   {
     vs: 'ShipFast / Boilerplates',
-    shipkit: [
+    ours: [
       'Teaches you the distribution and marketing system',
       'Works for any app, regardless of tech stack',
       'Covers the full go-to-market funnel',
@@ -68,7 +68,7 @@ const comparisons = [
   },
   {
     vs: 'Marketing Courses',
-    shipkit: [
+    ours: [
       'Tasks, not lectures — execute while you learn',
       'Done in hours, not weeks',
       '$29 one-time, not $500+',
@@ -83,7 +83,7 @@ const comparisons = [
   },
   {
     vs: 'Figuring It Out Yourself',
-    shipkit: [
+    ours: [
       'Battle-tested task sequence that works',
       'AI does the copy heavy lifting',
       'Know what to do and when',
@@ -186,7 +186,7 @@ const comparisons = [
   padding: 0.2rem 0.5rem;
 }
 
-.comparison__col-badge--shipkit {
+.comparison__col-badge--ours {
   background: rgba(0, 217, 255, 0.1);
   color: var(--cyberpunk-primary);
   border: 1px solid var(--cyberpunk-primary);
@@ -215,7 +215,7 @@ const comparisons = [
   gap: 0.5rem;
 }
 
-.comparison__col--shipkit .comparison__list li {
+.comparison__col--ours .comparison__list li {
   color: var(--cyberpunk-text-secondary);
 }
 

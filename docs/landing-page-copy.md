@@ -1,4 +1,4 @@
-# ShipKit — Landing Page Copy
+# LaunchPilot — Landing Page Copy
 
 All copy for the 10 landing page sections. Exact text ready for implementation.
 
@@ -6,7 +6,7 @@ All copy for the 10 landing page sections. Exact text ready for implementation.
 
 ## 1. NavBar
 
-**Logo text:** ShipKit
+**Logo text:** LaunchPilot
 
 **Nav links:**
 - Features
@@ -23,9 +23,9 @@ All copy for the 10 landing page sections. Exact text ready for implementation.
 Ship your launch. Stop winging it.
 
 **Subheadline:**
-ShipKit is a 32-task checklist that takes you from "I built a thing" to paying customers — with AI-generated copy personalized to your app, and zero marketing degree required.
+LaunchPilot is a 32-task checklist that takes you from "I built a thing" to paying customers — with AI-generated copy personalized to your app, and zero marketing degree required.
 
-**Primary CTA button:** Get ShipKit Free
+**Primary CTA button:** Get LaunchPilot Free
 
 **Secondary CTA text:** See pricing →
 
@@ -57,7 +57,7 @@ Marketing feels like a foreign language. You know your product is good — but w
 **Section heading:** 32 tasks. 4 phases. One clear path.
 
 **Intro sentence:**
-ShipKit breaks the launch process into a sequential checklist. Each task tells you exactly what to do, why it matters, and which tool to use — no decisions left hanging.
+LaunchPilot breaks the launch process into a sequential checklist. Each task tells you exactly what to do, why it matters, and which tool to use — no decisions left hanging.
 
 ---
 
@@ -115,9 +115,9 @@ Tier badge: Pro — $9/mo
 
 Title: Copy that knows your product
 
-Description: You answer a few questions about your app once. ShipKit uses that context to generate launch posts, Product Hunt descriptions, cold emails, and ad copy — all specific to what you built, not some generic SaaS template.
+Description: You answer a few questions about your app once. LaunchPilot uses that context to generate launch posts, Product Hunt descriptions, cold emails, and ad copy — all specific to what you built, not some generic SaaS template.
 
-Example: Instead of "an AI tool that saves time", your Product Hunt tagline becomes "Shipkit — the 32-step launch checklist for developers with zero marketing background." That's the difference between ignored and upvoted.
+Example: Instead of "an AI tool that saves time", your Product Hunt tagline becomes "LaunchPilot — the 32-step launch checklist for developers with zero marketing background." That's the difference between ignored and upvoted.
 
 ---
 
@@ -135,7 +135,7 @@ Example: For email capture, we don't list 15 options. We say "use Loops" and tel
 
 Title: Not a course. Not a book. A checklist.
 
-Description: Courses require motivation. Books require interpretation. A checklist just requires execution. ShipKit tells you what to do, in what order, with enough context to not get stuck — and nothing else.
+Description: Courses require motivation. Books require interpretation. A checklist just requires execution. LaunchPilot tells you what to do, in what order, with enough context to not get stuck — and nothing else.
 
 Example: Task 7: "Submit to Indie Hackers". You get the exact post format, a prompt to generate your content, a screenshot of what a good post looks like, and a checkbox when you're done. That's the whole thing.
 
@@ -158,7 +158,7 @@ What's included:
 - Social profile setup task
 - Analytics installation task
 - Positioning task (nail your one-liner)
-- Limited AI copy generations (3/month)
+- Limited AI copy generations (40/month)
 
 Button: Start Free
 
@@ -177,7 +177,7 @@ What's included:
 
 Button: Get Launcher
 
-Reassurance copy: One-time payment. No subscription. No upsells. If ShipKit doesn't help you launch, email for a full refund within 30 days.
+Reassurance copy: One-time payment. No subscription. No upsells. If LaunchPilot doesn't help you launch, email for a full refund within 30 days.
 
 ---
 
@@ -196,13 +196,13 @@ Micro-copy: Cancel anytime. No lock-in.
 ---
 
 **Money-back line:**
-30-day refund on all plans. If ShipKit doesn't help you move forward, you get your money back — no questions, no forms.
+30-day refund on all plans. If LaunchPilot doesn't help you move forward, you get your money back — no questions, no forms.
 
 ---
 
 ## 7. Comparison Section
 
-**Section heading:** Why ShipKit instead of the alternatives?
+**Section heading:** Why LaunchPilot instead of the alternatives?
 
 **Comparison intro:**
 There are other options. Here's the honest breakdown.
@@ -211,21 +211,21 @@ There are other options. Here's the honest breakdown.
 
 **vs ShipFast (or any boilerplate) — $99–$399**
 
-ShipFast helps you build faster. ShipKit helps you launch. They solve different problems.
+ShipFast helps you build faster. LaunchPilot helps you launch. They solve different problems.
 
-A boilerplate gives you auth, Stripe, and a landing page template. That's useful for building. But once you have an app and zero users, a boilerplate can't tell you how to get your first 100. ShipKit can.
+A boilerplate gives you auth, Stripe, and a landing page template. That's useful for building. But once you have an app and zero users, a boilerplate can't tell you how to get your first 100. LaunchPilot can.
 
-ShipKit verdict: If you already have an app, ShipKit is what you need next. If you haven't built yet, build first — then come back.
+LaunchPilot verdict: If you already have an app, LaunchPilot is what you need next. If you haven't built yet, build first — then come back.
 
 ---
 
 **vs Courses and YouTube tutorials**
 
-Courses teach. ShipKit executes.
+Courses teach. LaunchPilot executes.
 
-Watching someone else's launch case study doesn't launch your app. Courses are passive — you watch, feel inspired, then close the tab and check Twitter. ShipKit is active — you complete a task, check a box, and move to the next one. The output is your launch, not your knowledge.
+Watching someone else's launch case study doesn't launch your app. Courses are passive — you watch, feel inspired, then close the tab and check Twitter. LaunchPilot is active — you complete a task, check a box, and move to the next one. The output is your launch, not your knowledge.
 
-ShipKit verdict: Use courses to learn the "why." Use ShipKit to actually do the work.
+LaunchPilot verdict: Use courses to learn the "why." Use LaunchPilot to actually do the work.
 
 ---
 
@@ -233,34 +233,34 @@ ShipKit verdict: Use courses to learn the "why." Use ShipKit to actually do the 
 
 You could build your own launch process from scratch. You'd spend 20 hours researching, make several wrong moves, and skip the things that actually matter because you don't know what you don't know.
 
-ShipKit is a proven 32-step sequence distilled from real indie dev launches. The order matters. The tool picks matter. The templates matter. You're not reinventing the wheel — you're using one that already works.
+LaunchPilot is a proven 32-step sequence distilled from real indie dev launches. The order matters. The tool picks matter. The templates matter. You're not reinventing the wheel — you're using one that already works.
 
-ShipKit verdict: DIY is fine. ShipKit is faster.
+LaunchPilot verdict: DIY is fine. LaunchPilot is faster.
 
 ---
 
 ## 8. FAQ Section
 
 **Q: Is this another boilerplate or code template?**
-A: No. ShipKit contains zero code. It's a launch strategy system — a checklist with tasks, instructions, templates, and AI copy generation. You bring the app. ShipKit handles the rest of what it takes to get from "built" to "paying customers."
+A: No. LaunchPilot contains zero code. It's a launch strategy system — a checklist with tasks, instructions, templates, and AI copy generation. You bring the app. LaunchPilot handles the rest of what it takes to get from "built" to "paying customers."
 
 **Q: What if I already launched?**
 A: Skip Phase 1 and 2. Jump straight to Phase 3 (First 30 Days) or Phase 4 (Scaling). The tasks are sequential but not rigid — if you've already done something, check it off and move on. You'll still get value from the tasks you haven't done yet.
 
 **Q: How is the AI different from just using ChatGPT?**
-A: ChatGPT knows nothing about your app. ShipKit's AI uses the context you provide — your app name, target audience, problem it solves, unique angle — to generate copy that sounds like it was written specifically for you. The output is usable, not just a starting point you have to rewrite.
+A: ChatGPT knows nothing about your app. LaunchPilot's AI uses the context you provide — your app name, target audience, problem it solves, unique angle — to generate copy that sounds like it was written specifically for you. The output is usable, not just a starting point you have to rewrite.
 
 **Q: Can I use this for non-SaaS products?**
-A: Yes. The checklist works for mobile apps, developer tools, open-source libraries, browser extensions, or any digital product you want people to actually pay for. The tasks are product-type agnostic. If it's software and it needs users, ShipKit applies.
+A: Yes. The checklist works for mobile apps, developer tools, open-source libraries, browser extensions, or any digital product you want people to actually pay for. The tasks are product-type agnostic. If it's software and it needs users, LaunchPilot applies.
 
 **Q: What's actually in the free tier?**
 A: Phase 1 — 5 tasks covering the foundation: landing page setup, email capture, social profile creation, analytics installation, and positioning. These are the tasks you need to do before anything else. It's a real, useful chunk — not a demo.
 
 **Q: Do I need marketing or design skills?**
-A: No marketing skills needed. Basic dev skills assumed — you should be comfortable deploying a site, adding a script tag, and following technical setup instructions. ShipKit is for developers, not growth hackers. The AI handles the copywriting.
+A: No marketing skills needed. Basic dev skills assumed — you should be comfortable deploying a site, adding a script tag, and following technical setup instructions. LaunchPilot is for developers, not growth hackers. The AI handles the copywriting.
 
 **Q: What's the refund policy?**
-A: 30 days, full refund, no questions asked. Email support@shipkit.dev with your purchase info and you'll get your money back. We'd rather you tell us what didn't work than have you feel stuck with something that wasn't right.
+A: 30 days, full refund, no questions asked. Email support@launchpilot.marketing with your purchase info and you'll get your money back. We'd rather you tell us what didn't work than have you feel stuck with something that wasn't right.
 
 **Q: How long does the full checklist take to complete?**
 A: Depends on your pace. Most developers finish Phase 1 in an afternoon. A focused launch week (Phase 2) takes 5–7 days if you're moving fast. The full 32 tasks, done properly, spans 6–8 weeks. You can go faster — but slower is usually better for getting real feedback at each stage.
@@ -285,7 +285,7 @@ Launcher is $29 one-time. Pro is $9/month. Free is free.
 ## 10. Footer
 
 **Copyright text:**
-© 2026 ShipKit. Built for developers who ship.
+© 2026 LaunchPilot. Built for developers who ship.
 
 **Link labels:**
 - Privacy Policy

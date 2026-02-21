@@ -5,18 +5,18 @@ import { useHead, useSeoMeta } from '@unhead/vue'
  * Call inside a component's <script setup> or setup() to set page-level meta.
  *
  * @param {object} options
- * @param {string} options.title       - Page title (appended with "| ShipKit")
+ * @param {string} options.title       - Page title (appended with "| LaunchPilot")
  * @param {string} options.description - Meta description
  * @param {string} [options.path]      - Route path for canonical URL (e.g. '/pricing')
  * @param {string} [options.image]     - Absolute OG image URL (falls back to og-image.svg)
  */
 export function useSeo({ title, description, path, image }) {
-  const baseUrl = 'https://shipkit.example.com'
+  const baseUrl = 'https://launchpilot.example.com'
   const fullUrl = `${baseUrl}${path || '/'}`
   const fullImage = image || `${baseUrl}/og-image.svg`
 
   useHead({
-    title: `${title} | ShipKit`,
+    title: `${title} | LaunchPilot`,
     link: [{ rel: 'canonical', href: fullUrl }]
   })
 

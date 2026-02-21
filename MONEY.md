@@ -1,8 +1,27 @@
-# ShipKit Monetization Plan
+# LaunchPilot Monetization Plan
+
+## Implementation Status (as of 2026-02-21)
+
+| Component | Status | File |
+|-----------|--------|------|
+| Stripe products in dashboard | Not started | Stripe Dashboard |
+| Database migration (app column) | Not started | Supabase SQL |
+| stripe-checkout.cjs | Not started | `netlify/functions/` |
+| stripe-webhook.cjs | Not started | `netlify/functions/` |
+| stripe-portal.cjs | Not started | `netlify/functions/` |
+| claude-proxy.cjs app filter | Not started | `netlify/functions/claude-proxy.cjs` |
+| subscriptionStore.js | Not started | `src/stores/` |
+| PricingPage.vue | Done | `src/components/Pricing/PricingPage.vue` |
+| PricingSection.vue (landing page) | Done | `src/components/LandingPage/PricingSection.vue` |
+| UpgradePrompt.vue | Not started | `src/components/Pricing/` |
+| QuotaDisplay.vue | Not started | `src/components/Pricing/` |
+| QuotaExceededModal.vue | Not started | `src/components/Pricing/` |
+| Task locking in Dashboard | Not started | `src/components/Dashboard/` |
+| AI quota check in aiGeneration | Not started | `src/services/aiGeneration.js` |
 
 ## Context
 
-ShipKit has 32 tasks across 4 phases with tier gating already defined in the task schema (free/launcher/pro), but **0% monetization is implemented** -- no Stripe code, no payment UI, no subscription tracking. This plan takes ShipKit from zero to full Stripe integration.
+LaunchPilot has 32 tasks across 4 phases with tier gating already defined in the task schema (free/launcher/pro), but **0% monetization is implemented** -- no Stripe code, no payment UI, no subscription tracking. This plan takes LaunchPilot from zero to full Stripe integration.
 
 **Key decision:** Use **Stripe Checkout Sessions** (redirect to Stripe-hosted page) instead of embedded Payment Elements. This handles both one-time payments (Launcher $29) and subscriptions (Pro $9/mo) with zero Stripe.js frontend code.
 
@@ -14,8 +33,8 @@ Create in Stripe Dashboard (test mode first):
 
 | Product | Price | Mode | Metadata |
 |---------|-------|------|----------|
-| ShipKit Launcher | $29 one-time | `payment` | `tier: launcher` |
-| ShipKit Pro | $9/month | `subscription` | `tier: pro` |
+| LaunchPilot Launcher | $29 one-time | `payment` | `tier: launcher` |
+| LaunchPilot Pro | $9/month | `subscription` | `tier: pro` |
 
 Env vars to add:
 ```
@@ -59,7 +78,7 @@ VITE_STRIPE_PRO_PRICE_ID=price_...
 - Add `app = 'shipkit'` filter to subscription lookup (line ~168) and ai_usage count (line ~161)
 - Add `app: 'shipkit'` to ai_usage insert (line ~37)
 
-**6. Update `netlify/functions/utils/auth.cjs`** -- Add ShipKit domain to CORS origins
+**6. Update `netlify/functions/utils/auth.cjs`** -- Add LaunchPilot domain to CORS origins
 
 ### Agent 2: Frontend (Store + UI Components)
 
@@ -147,7 +166,7 @@ Phases 1 and 2 can run **in parallel**. Phase 3 depends on both completing.
 
 ## Key Reference Files
 
-| Purpose | ShipKit Path | LaunchPilot Reference |
+| Purpose | LaunchPilot Path | LaunchPilot Reference |
 |---------|-------------|----------------------|
 | Task schema + tier gating | `src/tasks/schema.js` | -- |
 | Task registry | `src/tasks/index.js` | -- |

@@ -1,5 +1,5 @@
 /**
- * ShipKit - Application Entry Point
+ * LaunchPilot - Application Entry Point
  *
  * Sets up:
  * - Vue 3 instance

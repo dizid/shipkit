@@ -61,7 +61,7 @@ export const phase3Tasks = [
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -159,7 +159,7 @@ Generate:
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -215,7 +215,7 @@ Day 7:
     ],
 
     commonMistakes: [
-      'Writing about your product instead of your user\'s problem. "Why you should use ShipKit" gets 10 views. "How to get your first 10 SaaS customers" gets 10,000.',
+      'Writing about your product instead of your user\'s problem. "Why you should use LaunchPilot" gets 10 views. "How to get your first 10 SaaS customers" gets 10,000.',
       'Publishing without distributing. Most of your article\'s traffic in the first 3 months will come from distribution, not SEO.',
       'Inconsistency. One article every 2 weeks consistently outperforms a burst of 10 articles followed by 3 months of silence.'
     ]
@@ -264,7 +264,7 @@ Day 7:
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -373,7 +373,7 @@ Next month's focus: [3 priorities]`
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -478,7 +478,7 @@ No prep needed — just your honest experience.
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -586,7 +586,7 @@ Thanks for being an early user.
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -689,7 +689,7 @@ Generate:
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -795,7 +795,7 @@ If anything changes, your account will be here.
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -899,7 +899,7 @@ Thanks either way.
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -1003,7 +1003,7 @@ Worth a shot?
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],

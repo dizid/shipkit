@@ -1,5 +1,5 @@
 /**
- * ShipKit Task Schema
+ * LaunchPilot Task Schema
  *
  * Defines the TypeScript-style JSDoc types for the task system
  * and exports helper functions for querying tasks.

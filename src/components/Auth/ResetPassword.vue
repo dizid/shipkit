@@ -5,7 +5,7 @@
       <!-- Header -->
       <div class="mb-8">
         <div class="mb-4">
-          <span class="badge badge-primary text-xs">SHIPKIT</span>
+          <span class="badge badge-primary text-xs">LAUNCHPILOT</span>
         </div>
         <h1 class="text-2xl font-bold mb-2" style="font-family: var(--font-display); color: var(--cyberpunk-text);">
           Reset Password

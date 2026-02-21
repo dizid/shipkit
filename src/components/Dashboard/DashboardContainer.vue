@@ -7,7 +7,7 @@
       style="background: var(--cyberpunk-surface); border-bottom: 1px solid var(--cyberpunk-border); position: sticky; top: 0; z-index: 10;"
     >
       <div class="flex items-center gap-3">
-        <span style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--cyberpunk-primary);">SHIPKIT</span>
+        <span style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--cyberpunk-primary);">LAUNCHPILOT</span>
         <span class="badge badge-highlight" style="font-size: 0.65rem;">BETA</span>
       </div>
       <div class="flex items-center gap-4">

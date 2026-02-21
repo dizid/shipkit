@@ -86,7 +86,7 @@
         <div class="setting-row">
           <div>
             <strong>Sign out</strong>
-            <p>Sign out of your ShipKit account</p>
+            <p>Sign out of your LaunchPilot account</p>
           </div>
           <button class="btn btn-secondary" @click="handleSignOut">Sign Out</button>
         </div>

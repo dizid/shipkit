@@ -75,7 +75,7 @@ export const phase2Tasks = [
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'e.g., ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'e.g., LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description.', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true },
       { id: 'launch_date', type: 'text', label: 'Launch date', placeholder: 'e.g., March 15, 2025', required: true }
@@ -206,7 +206,7 @@ Day 2 starts now.`
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -316,7 +316,7 @@ Thanks,
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -425,7 +425,7 @@ Would love feedback from anyone who's dealt with [problem]. What would make this
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -505,7 +505,7 @@ $[LAUNCH PRICE]/month (normally $[FULL PRICE]/month)
           'Walk through your onboarding exactly as a new user would: sign up, complete first action, get to the core value. Count the steps. Note every decision point. Identify the moment where most users will give up.',
         subtasks: [
           { title: 'Document every step from signup to first value delivery', description: 'Make a list: "Step 1: enter email → Step 2: verify email → Step 3: ..."' },
-          { title: 'Identify the "aha moment" — the first moment of real value', description: 'For ShipKit it might be: "completed your first task and generated your first AI copy."' },
+          { title: 'Identify the "aha moment" — the first moment of real value', description: 'For LaunchPilot it might be: "completed your first task and generated your first AI copy."' },
           { title: 'Count the steps between signup and the aha moment', description: 'Target: ≤ 5 steps. If it\'s more, identify which steps can be removed or deferred.' }
         ]
       },
@@ -531,7 +531,7 @@ $[LAUNCH PRICE]/month (normally $[FULL PRICE]/month)
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -633,7 +633,7 @@ Ready? Here's the URL: [URL]"`
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -750,7 +750,7 @@ Reply with whatever's on your mind — I read every reply personally.
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],

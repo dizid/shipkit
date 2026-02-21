@@ -1,7 +1,7 @@
 {
-  "name": "shipkit",
+  "name": "launchpilot",
   "version": "0.1.0",
-  "description": "ShipKit — The launch checklist for indie developers",
+  "description": "LaunchPilot — The launch checklist for indie developers",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@sentry/vue": "^10.39.0",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@netlify/vite-plugin": "^2.10.2",
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/vite": "^4.2.0",
     "@vitejs/plugin-vue": "^6.0.2",
     "tailwindcss": "^4.2.0",

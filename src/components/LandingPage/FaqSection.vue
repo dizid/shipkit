@@ -37,24 +37,24 @@ function toggle(i) {
 
 const faqs = [
   {
-    q: 'Do I need to be a marketer to use ShipKit?',
-    a: 'No. ShipKit is built by a developer, for developers. Every task is explained in plain English with specific actions, not marketing jargon. The AI handles the copy — you just answer a few questions about your product and it generates everything from your positioning to your launch posts.'
+    q: 'Do I need to be a marketer to use LaunchPilot?',
+    a: 'No. LaunchPilot is built by a developer, for developers. Every task is explained in plain English with specific actions, not marketing jargon. The AI handles the copy — you just answer a few questions about your product and it generates everything from your positioning to your launch posts.'
   },
   {
     q: 'What if my app is already launched?',
-    a: 'That\'s fine. You can skip Phase 1 tasks you\'ve already done and jump straight into Phases 2–4. ShipKit isn\'t locked to a specific launch timeline — it\'s a system you can use at any stage of your product lifecycle.'
+    a: 'That\'s fine. You can skip Phase 1 tasks you\'ve already done and jump straight into Phases 2–4. LaunchPilot isn\'t locked to a specific launch timeline — it\'s a system you can use at any stage of your product lifecycle.'
   },
   {
     q: 'Is the $29 really a one-time payment?',
     a: 'Yes. No hidden subscriptions. Pay once, access all 32 tasks forever. Updates to existing tasks are included at no extra cost. The Pro plan ($9/mo) adds monthly new strategies and priority support — but that\'s fully optional.'
   },
   {
-    q: 'What tech stack does ShipKit work with?',
-    a: 'All of them. ShipKit is about distribution, positioning, and customer acquisition — not code. Whether you built your app in Rails, Next.js, Flutter, or pure PHP, the marketing playbook is the same.'
+    q: 'What tech stack does LaunchPilot work with?',
+    a: 'All of them. LaunchPilot is about distribution, positioning, and customer acquisition — not code. Whether you built your app in Rails, Next.js, Flutter, or pure PHP, the marketing playbook is the same.'
   },
   {
     q: 'How is this different from just reading blog posts?',
-    a: 'Three things: sequence, specificity, and AI execution. Blog posts give you information in random order and you still have to turn it into action. ShipKit gives you tasks in the right sequence, specific to your product, with AI generating the actual copy so you don\'t start from a blank page.'
+    a: 'Three things: sequence, specificity, and AI execution. Blog posts give you information in random order and you still have to turn it into action. LaunchPilot gives you tasks in the right sequence, specific to your product, with AI generating the actual copy so you don\'t start from a blank page.'
   },
   {
     q: 'How long does it take to go through the checklist?',
@@ -62,11 +62,11 @@ const faqs = [
   },
   {
     q: 'Can I get a refund if it\'s not for me?',
-    a: 'Yes. 30-day money-back guarantee, no questions asked. If ShipKit doesn\'t help you make progress toward paying customers, email us and we\'ll refund you immediately.'
+    a: 'Yes. 30-day money-back guarantee, no questions asked. If LaunchPilot doesn\'t help you make progress toward paying customers, email us and we\'ll refund you immediately.'
   },
   {
     q: 'What happens after I sign up?',
-    a: 'You\'ll create a project for your app, answer a few questions about what you\'re building, and land on your personalized Phase 1 checklist. The first task takes about 15 minutes. ShipKit works best when you do one task per day.'
+    a: 'You\'ll create a project for your app, answer a few questions about what you\'re building, and land on your personalized Phase 1 checklist. The first task takes about 15 minutes. LaunchPilot works best when you do one task per day.'
   }
 ]
 </script>

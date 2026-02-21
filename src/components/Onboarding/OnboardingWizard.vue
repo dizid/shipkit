@@ -2,7 +2,7 @@
   <div class="onboarding">
     <div class="onboarding-card">
       <div class="onboarding-brand">
-        <span class="onboarding-brand-text">ShipKit</span>
+        <span class="onboarding-brand-text">LaunchPilot</span>
       </div>
 
       <h1>Set Up Your Project</h1>
@@ -15,7 +15,7 @@
             id="appName"
             v-model="form.appName"
             type="text"
-            placeholder="ShipKit"
+            placeholder="LaunchPilot"
             required
             :disabled="isSaving"
           />

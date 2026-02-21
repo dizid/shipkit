@@ -1,4 +1,4 @@
-# ShipKit - Project Guide
+# LaunchPilot - Project Guide
 
 The guided launch checklist for indie developers. Helps devs go from "I built a thing" to paying customers — 32 tasks across 4 phases.
 
@@ -16,11 +16,14 @@ App runs on port 3000. Do NOT use `netlify dev`.
 
 ## Key Directories
 - `src/tasks/` - Single task registry (schema + 4 phase files)
-- `src/components/` - Vue components by domain
-- `src/stores/` - Pinia stores (auth, project, quota, onboarding, milestone)
-- `src/services/` - API services (aiGeneration, taskDataService, stripeService)
-- `src/composables/` - Vue composables (useTaskFormData, useSaveState)
-- `netlify/functions/` - Serverless functions (claude-proxy, stripe-*)
+- `src/components/` - Vue components by domain (Auth, Dashboard, LandingPage, Onboarding, Pricing, ReadinessScore, Settings, shared)
+- `src/components/LandingPage/` - 10 section components (NavBar, Hero, Problem, Solution, Features, Pricing, Comparison, FAQ, FinalCta, Footer)
+- `src/stores/` - Pinia stores (authStore, projectStore)
+- `src/services/` - API services (aiGeneration, taskDataService, projectService)
+- `src/composables/` - Vue composables (useTaskFormData, useSaveState, useUnsavedChanges, useSeo, useUtm, useAnalytics)
+- `netlify/functions/` - Serverless functions (claude-proxy)
+- `docs/` - Marketing copy (landing-page-copy.md, social-content.md)
+- `public/` - Brand assets (logo.svg, favicon.svg, og-image.svg, og-twitter.svg)
 
 ## Architecture: ONE Task System
 All 32 tasks defined in `src/tasks/`:
@@ -57,13 +60,29 @@ All 32 tasks defined in `src/tasks/`:
 - Simple solutions over clever ones
 - Mobile-first responsive design
 
+## Routes
+- `/` - Landing page (public, 10 section components)
+- `/pricing` - Standalone pricing page (public)
+- `/score` - Launch readiness score (public)
+- `/auth` - Sign in / Sign up (public)
+- `/reset-password` - Password reset (public)
+- `/onboarding` - Project setup wizard (auth required)
+- `/dashboard` - Task dashboard (auth + project required)
+- `/dashboard/task/:taskId` - Task detail workbench (auth + project required)
+- `/dashboard/settings` - Project settings (auth + project required)
+
+## Monetization Status
+Stripe integration NOT yet implemented. Tier gating defined in task schema only.
+AI quota enforcement exists in claude-proxy (free: 40/mo, launcher: 400/mo, pro: 400/mo).
+Full implementation plan saved in Claude memory (MONEY.md).
+
 ## Deployment
-- GitHub repo: https://github.com/dizid/shipkit
-- Netlify site: `launchpilot2` (ID: `e154184f-55fc-4fbf-9a5f-a8431bfc4aa8`)
-- Production URL: https://launchpilot.marketing
-- GA4 Measurement ID: `G-5BC4HZ0HNB`
+- GitHub repo: https://github.com/dizid/shipkit (repo name != brand name)
 - Supabase project: `aajllpghqmeulnvlruaj`
+- GA4 Measurement ID: `G-5BC4HZ0HNB`
+- Domain: TBD (placeholder `launchpilot.example.com` in meta tags)
+- Netlify: Not yet deployed
 
 ## Origin
-Cherry-picked proven patterns from LaunchPilot (`/home/marc/DEV/sales`).
+Cherry-picked proven patterns from the sales project (`/home/marc/DEV/sales`).
 Reference it for: Supabase schema, Stripe webhook patterns, auth flow details.

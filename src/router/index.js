@@ -1,5 +1,5 @@
 /**
- * ShipKit Vue Router
+ * LaunchPilot Vue Router
  *
  * Routes:
  * - /                   → LandingPage (public)
@@ -28,6 +28,7 @@ import { useProjectStore } from '@/stores/projectStore'
 
 const LandingPage = () => import('@/components/LandingPage.vue')
 const PricingPage = () => import('@/components/Pricing/PricingPage.vue')
+const ReadinessScore = () => import('@/components/ReadinessScore/ReadinessScore.vue')
 const AuthForm = () => import('@/components/Auth/AuthForm.vue')
 const ResetPassword = () => import('@/components/Auth/ResetPassword.vue')
 const OnboardingWizard = () => import('@/components/Onboarding/OnboardingWizard.vue')
@@ -49,6 +50,12 @@ const routes = [
     path: '/pricing',
     name: 'Pricing',
     component: PricingPage,
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/score',
+    name: 'ReadinessScore',
+    component: ReadinessScore,
     meta: { requiresAuth: false }
   },
   {

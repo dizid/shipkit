@@ -5,13 +5,13 @@
       <!-- Header -->
       <div class="mb-8">
         <div class="mb-4">
-          <span class="badge badge-primary text-xs">SHIPKIT</span>
+          <span class="badge badge-primary text-xs">LAUNCHPILOT</span>
         </div>
         <h1 class="text-2xl font-bold mb-2" style="font-family: var(--font-display); color: var(--cyberpunk-text);">
           {{ isSignUp ? 'Create Account' : 'Welcome Back' }}
         </h1>
         <p style="color: var(--cyberpunk-text-secondary); font-size: 0.9rem;">
-          {{ isSignUp ? 'Start your 32-step launch journey' : 'Sign in to your ShipKit account' }}
+          {{ isSignUp ? 'Start your 32-step launch journey' : 'Sign in to your LaunchPilot account' }}
         </p>
       </div>
 

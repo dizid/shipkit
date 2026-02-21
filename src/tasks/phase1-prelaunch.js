@@ -85,14 +85,14 @@ export const phase1Tasks = [
         id: 'app_name',
         type: 'text',
         label: 'App name',
-        placeholder: 'e.g., ShipKit',
+        placeholder: 'e.g., LaunchPilot',
         required: true
       },
       {
         id: 'app_description',
         type: 'textarea',
         label: 'What does your app do? (1-3 sentences)',
-        placeholder: 'e.g., ShipKit is a 32-task launch checklist for indie developers. It guides you through pre-launch, launch week, and your first 30 days with step-by-step tasks and AI-generated copy.',
+        placeholder: 'e.g., LaunchPilot is a 32-task launch checklist for indie developers. It guides you through pre-launch, launch week, and your first 30 days with step-by-step tasks and AI-generated copy.',
         required: true
       },
       {
@@ -224,7 +224,7 @@ Short, action-oriented. Should tell them exactly what happens when they click (e
         subtasks: [
           { title: 'Sign up for Buttondown (or your chosen tool)', description: 'Free up to 1,000 subscribers. No credit card required.' },
           { title: 'Verify your sending domain', description: 'Set up SPF/DKIM for your domain to prevent emails landing in spam. Your tool will guide you through this.' },
-          { title: 'Set up your sender profile', description: 'Use your name + app name as the sender (e.g., "Marc from ShipKit"), not a generic "noreply@" address.' }
+          { title: 'Set up your sender profile', description: 'Use your name + app name as the sender (e.g., "Marc from LaunchPilot"), not a generic "noreply@" address.' }
         ]
       },
       {
@@ -274,7 +274,7 @@ Short, action-oriented. Should tell them exactly what happens when they click (e
         id: 'app_name',
         type: 'text',
         label: 'App name',
-        placeholder: 'e.g., ShipKit',
+        placeholder: 'e.g., LaunchPilot',
         required: true
       },
       {
@@ -518,7 +518,7 @@ P.S. If you haven't tried it yet, here's the link: [URL]`
         id: 'app_name',
         type: 'text',
         label: 'App name',
-        placeholder: 'e.g., ShipKit',
+        placeholder: 'e.g., LaunchPilot',
         required: true
       },
       {
@@ -553,7 +553,7 @@ P.S. If you haven't tried it yet, here's the link: [URL]`
         id: 'app_url',
         type: 'text',
         label: 'Your app URL',
-        placeholder: 'e.g., https://shipkit.dev',
+        placeholder: 'e.g., https://myapp.com',
         required: false
       }
     ],
@@ -730,7 +730,7 @@ Reply with your answer — even "this isn't a problem for me" is useful.`
         id: 'app_name',
         type: 'text',
         label: 'App name',
-        placeholder: 'e.g., ShipKit',
+        placeholder: 'e.g., LaunchPilot',
         required: true
       },
       {
@@ -983,7 +983,7 @@ Happy to answer any technical questions.`
         id: 'app_name',
         type: 'text',
         label: 'App name',
-        placeholder: 'e.g., ShipKit',
+        placeholder: 'e.g., LaunchPilot',
         required: true
       },
       {

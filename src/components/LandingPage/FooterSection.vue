@@ -20,7 +20,7 @@
       </nav>
 
       <p class="footer__copy">
-        &copy; {{ currentYear }} ShipKit. Built by an indie dev, for indie devs.
+        &copy; {{ currentYear }} LaunchPilot. Built by an indie dev, for indie devs.
       </p>
     </div>
   </footer>

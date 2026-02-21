@@ -62,7 +62,7 @@ export const phase4Tasks = [
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -167,7 +167,7 @@ Decision rules:
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -276,7 +276,7 @@ Takes under 5 minutes.
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -384,7 +384,7 @@ Any questions? Just reply.
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -488,7 +488,7 @@ Would you be open to trying it free for 2 weeks? Happy to walk you through it in
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -593,7 +593,7 @@ Generate:
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -688,7 +688,7 @@ because [reason you're able to do this].`
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -793,7 +793,7 @@ Reply directly to this email with your answers — I read every response.
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -903,7 +903,7 @@ Start here → introduce yourself in #introductions.
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],
@@ -1009,7 +1009,7 @@ Generate:
     ],
 
     formFields: [
-      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'ShipKit', required: true },
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
       { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
       { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true }
     ],

@@ -17,8 +17,8 @@ export function useUtm() {
 
   // Only persist if at least utm_source is present
   if (utm.source) {
-    sessionStorage.setItem('shipkit_utm', JSON.stringify(utm))
+    sessionStorage.setItem('launchpilot_utm', JSON.stringify(utm))
   }
 
-  return JSON.parse(sessionStorage.getItem('shipkit_utm') || '{}')
+  return JSON.parse(sessionStorage.getItem('launchpilot_utm') || '{}')
 }

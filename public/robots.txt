@@ -5,4 +5,4 @@ Disallow: /onboarding
 Disallow: /auth
 Disallow: /reset-password
 
-Sitemap: https://shipkit.example.com/sitemap.xml
+Sitemap: https://launchpilot.example.com/sitemap.xml
