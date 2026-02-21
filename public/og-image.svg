@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0e27"/>
+
+  <!-- Subtle grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.05"/>
+    </pattern>
+    <linearGradient id="cyanMagenta" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d9ff"/>
+      <stop offset="100%" stop-color="#c9004f"/>
+    </linearGradient>
+    <linearGradient id="bgGlow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#00d9ff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0a0e27" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Top glow from logo area -->
+  <ellipse cx="600" cy="100" rx="400" ry="120" fill="url(#bgGlow)"/>
+
+  <!-- Logo mark (scaled up, centered top) -->
+  <g transform="translate(552, 60)">
+    <!-- Rocket nose -->
+    <polygon points="48,0 28,32 68,32" fill="#00d9ff"/>
+    <!-- Rocket body -->
+    <rect x="28" y="32" width="40" height="36" fill="#00d9ff" opacity="0.12" stroke="#00d9ff" stroke-width="2"/>
+    <!-- Checkmark inside body -->
+    <polyline points="35,50 44,60 65,38" stroke="#00d9ff" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+    <!-- Left fin -->
+    <polygon points="28,54 12,80 28,80" fill="#00d9ff" opacity="0.8"/>
+    <!-- Right fin -->
+    <polygon points="68,54 84,80 68,80" fill="#00d9ff" opacity="0.8"/>
+    <!-- Exhaust left -->
+    <polygon points="34,68 44,68 39,86" fill="#c9004f"/>
+    <!-- Exhaust right -->
+    <polygon points="44,68 56,68 50,86" fill="#ffbe0b"/>
+  </g>
+
+  <!-- ShipKit wordmark next to icon -->
+  <text
+    x="660"
+    y="118"
+    font-family="Unbounded, sans-serif"
+    font-weight="700"
+    font-size="38"
+    letter-spacing="-1"
+    fill="#ffffff"
+  >Ship<tspan fill="#00d9ff">Kit</tspan></text>
+
+  <!-- Gradient divider line -->
+  <rect x="100" y="200" width="1000" height="3" fill="url(#cyanMagenta)" opacity="0.8"/>
+
+  <!-- Main headline -->
+  <text
+    x="600"
+    y="300"
+    font-family="Unbounded, sans-serif"
+    font-weight="900"
+    font-size="64"
+    text-anchor="middle"
+    fill="#ffffff"
+  >Ship Your App in Days,</text>
+  <text
+    x="600"
+    y="378"
+    font-family="Unbounded, sans-serif"
+    font-weight="900"
+    font-size="64"
+    text-anchor="middle"
+    fill="#ffffff"
+  >Not <tspan fill="#00d9ff">Months</tspan></text>
+
+  <!-- Subline -->
+  <text
+    x="600"
+    y="450"
+    font-family="Space Grotesk, sans-serif"
+    font-weight="400"
+    font-size="28"
+    text-anchor="middle"
+    fill="#a8b5c6"
+    letter-spacing="0.5"
+  >32 guided tasks  •  AI-powered copy  •  $29 one-time</text>
+
+  <!-- Bottom accent line -->
+  <rect x="100" y="540" width="1000" height="2" fill="url(#cyanMagenta)" opacity="0.4"/>
+
+  <!-- Corner decorations: sharp geometric accents -->
+  <!-- Top-left bracket -->
+  <polyline points="30,30 30,10 50,10" stroke="#00d9ff" stroke-width="2" fill="none" opacity="0.5"/>
+  <!-- Top-right bracket -->
+  <polyline points="1170,30 1170,10 1150,10" stroke="#00d9ff" stroke-width="2" fill="none" opacity="0.5"/>
+  <!-- Bottom-left bracket -->
+  <polyline points="30,600 30,620 50,620" stroke="#c9004f" stroke-width="2" fill="none" opacity="0.5"/>
+  <!-- Bottom-right bracket -->
+  <polyline points="1170,600 1170,620 1150,620" stroke="#c9004f" stroke-width="2" fill="none" opacity="0.5"/>
+</svg>

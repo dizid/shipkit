@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /onboarding
+Disallow: /auth
+Disallow: /reset-password
+
+Sitemap: https://shipkit.example.com/sitemap.xml

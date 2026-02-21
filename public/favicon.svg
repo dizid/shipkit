@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Rocket nose -->
+  <polygon points="16,2 8,12 24,12" fill="#00d9ff"/>
+  <!-- Rocket body -->
+  <rect x="8" y="12" width="16" height="13" fill="#00d9ff" opacity="0.15" stroke="#00d9ff" stroke-width="1.5"/>
+  <!-- Checklist checkmark inside body -->
+  <polyline points="11,18 14,22 21,15" stroke="#00d9ff" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+  <!-- Left fin -->
+  <polygon points="8,20 3,28 8,28" fill="#00d9ff" opacity="0.7"/>
+  <!-- Right fin -->
+  <polygon points="24,20 29,28 24,28" fill="#00d9ff" opacity="0.7"/>
+  <!-- Exhaust -->
+  <polygon points="12,25 16,25 14,31" fill="#c9004f"/>
+  <polygon points="16,25 20,25 18,31" fill="#ffbe0b"/>
+</svg>
