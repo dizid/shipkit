@@ -205,13 +205,15 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/authStore'
+import { useProjectStore } from '@/stores/projectStore'
 import { tasks as allTasks, phases as phasesMeta } from '@/tasks/index.js'
 
 const router = useRouter()
 const authStore = useAuthStore()
+const projectStore = useProjectStore()
 
 // Selected phase — default to Phase 1
 const selectedPhase = ref(1)
@@ -223,8 +225,15 @@ const userFirstName = computed(() => {
   return email.split('@')[0] || 'Developer'
 })
 
-// Reactive set of completed task IDs (local state — Supabase persistence wired later)
-const completedTaskIds = ref(new Set())
+// Completed task IDs — derived from projectStore, persisted to Supabase
+const completedTaskIds = computed(() => {
+  const tasks = projectStore.currentProjectTasks || {}
+  const ids = new Set()
+  for (const [taskId, taskState] of Object.entries(tasks)) {
+    if (taskState?.completed) ids.add(taskId)
+  }
+  return ids
+})
 
 // Phase display colors — keyed by phase number
 const phaseColors = {
@@ -282,15 +291,17 @@ const selectPhase = (phaseId) => {
   selectedPhase.value = phaseId
 }
 
-// Toggle completion state locally
-const toggleTask = (taskId) => {
-  const updated = new Set(completedTaskIds.value)
-  if (updated.has(taskId)) {
-    updated.delete(taskId)
-  } else {
-    updated.add(taskId)
+// Toggle completion state — persists to Supabase via projectStore
+const toggleTask = async (taskId) => {
+  const isCompleted = completedTaskIds.value.has(taskId)
+  try {
+    await projectStore.updateTask(taskId, {
+      completed: !isCompleted,
+      completed_at: !isCompleted ? new Date().toISOString() : null
+    })
+  } catch (err) {
+    console.error('Failed to toggle task:', err)
   }
-  completedTaskIds.value = updated
 }
 
 // Navigate to task detail — uses the real task ID from the registry

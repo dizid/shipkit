@@ -57,6 +57,13 @@ All 32 tasks defined in `src/tasks/`:
 - Simple solutions over clever ones
 - Mobile-first responsive design
 
+## Deployment
+- GitHub repo: https://github.com/dizid/shipkit
+- Netlify site: `launchpilot2` (ID: `e154184f-55fc-4fbf-9a5f-a8431bfc4aa8`)
+- Production URL: https://launchpilot.marketing
+- GA4 Measurement ID: `G-5BC4HZ0HNB`
+- Supabase project: `aajllpghqmeulnvlruaj`
+
 ## Origin
 Cherry-picked proven patterns from LaunchPilot (`/home/marc/DEV/sales`).
 Reference it for: Supabase schema, Stripe webhook patterns, auth flow details.

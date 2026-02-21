@@ -27,6 +27,7 @@ import { useProjectStore } from '@/stores/projectStore'
 // ─── Route components ─────────────────────────────────────────────────────────
 
 const LandingPage = () => import('@/components/LandingPage.vue')
+const PricingPage = () => import('@/components/Pricing/PricingPage.vue')
 const AuthForm = () => import('@/components/Auth/AuthForm.vue')
 const ResetPassword = () => import('@/components/Auth/ResetPassword.vue')
 const OnboardingWizard = () => import('@/components/Onboarding/OnboardingWizard.vue')
@@ -42,6 +43,12 @@ const routes = [
     path: '/',
     name: 'Home',
     component: LandingPage,
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/pricing',
+    name: 'Pricing',
+    component: PricingPage,
     meta: { requiresAuth: false }
   },
   {

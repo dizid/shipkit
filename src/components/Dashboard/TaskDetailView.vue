@@ -316,7 +316,15 @@ function handleBackClick() {
 
 // ── Subtask checkbox state ───────────────────────────────────────────────────
 // Key format: `${stepIndex}-${subtaskIndex}`
+// Persisted as a special form field `_subtaskState` via useTaskFormData
 const subtaskState = reactive({})
+
+// Restore subtask state from saved form data on load
+watch(() => formData.value._subtaskState, (saved) => {
+  if (saved && typeof saved === 'object') {
+    Object.assign(subtaskState, saved)
+  }
+}, { immediate: true })
 
 function getCheckedCount(stepIndex) {
   const step = task.value?.steps?.[stepIndex]
@@ -327,6 +335,8 @@ function getCheckedCount(stepIndex) {
 function toggleSubtask(stepIndex, subtaskIndex) {
   const key = `${stepIndex}-${subtaskIndex}`
   subtaskState[key] = !subtaskState[key]
+  // Persist the entire subtask state as a form field
+  updateField('_subtaskState', { ...subtaskState })
 }
 
 // ── Form field handlers ──────────────────────────────────────────────────────
