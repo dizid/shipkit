@@ -31,3 +31,4 @@ Thumbs.db
 test-results/
 playwright-report/
 coverage/
+e2e/.auth/
