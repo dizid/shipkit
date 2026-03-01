@@ -5,6 +5,7 @@
     <ProblemSection />
     <SolutionSection />
     <FeaturesSection />
+    <MidPageCaptureSection />
     <PricingSection />
     <ComparisonSection />
     <FaqSection />
@@ -19,6 +20,7 @@ import HeroSection from '@/components/LandingPage/HeroSection.vue'
 import ProblemSection from '@/components/LandingPage/ProblemSection.vue'
 import SolutionSection from '@/components/LandingPage/SolutionSection.vue'
 import FeaturesSection from '@/components/LandingPage/FeaturesSection.vue'
+import MidPageCaptureSection from '@/components/LandingPage/MidPageCaptureSection.vue'
 import PricingSection from '@/components/LandingPage/PricingSection.vue'
 import ComparisonSection from '@/components/LandingPage/ComparisonSection.vue'
 import FaqSection from '@/components/LandingPage/FaqSection.vue'

@@ -1,7 +1,7 @@
 # Competitor Research Report
 ## Marketing Launch Tools for Indie Developers
 
-*Research date: February 2026*
+*Research date: February 2026, updated March 2026*
 
 ---
 
@@ -10,6 +10,40 @@
 There is NO dominant interactive app that does what we're building. The space is fragmented across 5 categories: static blog checklists, Notion templates, waitlist tools, AI audit tools, and GitHub repos. Each has significant weaknesses we can exploit. The closest competitor is LaunchList.cc (a static checklist), and even that is barely functional compared to our plan.
 
 **Key finding:** The demand signal is massive (hundreds of blog posts, Notion templates selling thousands of copies, GitHub repos with 1K+ stars), but nobody has built a proper interactive SaaS product that guides indie developers through marketing their launch with AI personalization.
+
+---
+
+## OUR CURRENT STATUS (March 2026)
+
+Since the initial research, LaunchPilot has been built and is in pre-launch state:
+
+- **Landing page**: 11-section cyberpunk-themed landing page at launchpilot.marketing
+- **Email capture**: Dual-write system (Buttondown API + Supabase waitlist) with 3 capture points (hero, mid-page, footer)
+- **UTM + source tracking**: Every email capture records capture source and UTM parameters
+- **GA4 analytics**: Full event tracking including email capture conversions
+- **AI generation**: Working Claude AI proxy with per-tier quota enforcement (free: 40/mo, launcher: 400/mo, pro: 400/mo)
+- **32 tasks**: All task content defined across 4 phases with tier gating in schema
+- **Auth + onboarding**: Supabase auth with project setup wizard
+- **Not yet implemented**: Stripe payments, tier locking in UI, subscription management
+
+---
+
+## BRAND NAME COLLISION (March 2026)
+
+**Critical discovery:** At least 5 other products now use the "LaunchPilot" name. This was not the case during initial research in February 2026.
+
+| Product | URL | What It Is | Price |
+|---------|-----|------------|-------|
+| **LaunchPilot OS** | pilot.launchsoar.com | Structured product launch checklist & OS for indie devs. **Most direct competitor** — same audience, same concept. | $15 |
+| **LaunchPilot Autopilot** | launchpilot.one | Auto-post launches to Reddit, PH, Twitter, LinkedIn with analytics | Unknown |
+| **LaunchPilot Kit** | launchpilot.polsia.app | AI launch kit generator — landing page copy, tweets, PH posts, email sequences | Unknown |
+| **LaunchPilot MVP** | launchpilot.today | MVP launch accelerator — "launch in days, not months" | Unknown |
+| **LaunchPilot PM** | launchpilot.xyz | Project management services (different market) | Unknown |
+| **LaunchPilot UK** | launchpilot.co.uk | UK-based, purpose unclear | Unknown |
+
+**Risk assessment:** The name collision is significant. `pilot.launchsoar.com` is the most concerning — same audience, same concept, $15 price point (cheaper than our $29). Our differentiation remains the **AI-personalized copy generation** and **interactive progress tracking** — neither of which they offer.
+
+**Mitigation:** Secure the `launchpilot.marketing` domain as our primary brand identifier. Lean into the AI personalization angle in all messaging. Consider SEO strategy to differentiate from name-alike products.
 
 ---
 
@@ -219,6 +253,7 @@ Evidence that people want and pay for this:
 | **Free content is "good enough"** | High | Our moat is AI personalization + progress tracking + templates. Free content has no workflow. |
 | **Low willingness to pay in target market** | Medium | $29 is validated. Free tier captures volume. |
 | **Content becomes outdated** | Medium | Monthly Pro updates, AI advice stays current via prompts |
+| **Brand name collision** | High | 5+ products use "LaunchPilot". Differentiate via domain (launchpilot.marketing), AI angle, and community presence. |
 
 ---
 
@@ -230,6 +265,7 @@ Evidence that people want and pay for this:
 3. **From GitHub repos:** Developer-native language, community goodwill, open-source lead magnet
 4. **From Blog checklists:** SEO-optimized content (each task = a blog post)
 5. **From Startup Growth Kit:** Massive resource lists (400+ submission sites, 700+ resources)
+6. **From LaunchPilot OS (pilot.launchsoar.com):** Their $15 price point validates the checklist concept at an even lower price. Study their framework for gaps we can fill.
 
 ### What to do differently from ALL competitors:
 1. **AI personalization** — Nobody does this for marketing guidance
@@ -248,8 +284,22 @@ Evidence that people want and pay for this:
 
 ---
 
+## NEW SEO COMPETITORS (March 2026)
+
+| Competitor | URL | What Changed |
+|-----------|-----|-------------|
+| **AppLaunchFlow** | applaunchflow.com/blog/app-launch-checklist-2026 | Published "App Launch Checklist 2026" targeting indie devs specifically — stronger SEO competitor now |
+| **indie.build** | indie.build/saas-checklist | New SaaS checklist tool — interactive, targets indie builders |
+| **DEV.to marketing guides** | dev.to | Growing collection of developer marketing guides from community authors — free, high-authority domain |
+| **DesignRevision** | designrevision.com/blog/saas-launch-checklist | Comprehensive SaaS launch checklist with free template — strong SEO |
+
+---
+
 ## CONCLUSION
 
-The market is proven (people pay for launch guidance), the demand is growing (AI enables more app creation), and the gap is clear (no interactive, AI-personalized marketing checklist for indie devs exists). Competition is fragmented across static formats. We have a clear path to occupy the top-right quadrant: comprehensive + interactive + AI-personalized.
+The market is proven (people pay for launch guidance), the demand is growing (AI enables more app creation), and the competitive landscape has intensified since February. The gap for an **interactive, AI-personalized** marketing checklist still exists — but the window is narrowing. Multiple products now use the "LaunchPilot" name, and new SEO competitors are publishing 2026-specific content.
 
-**Biggest risk:** Not shipping fast enough. The window is open NOW.
+**Biggest risks (updated):**
+1. **Brand name collision** — 5+ products share the "LaunchPilot" name. Differentiate aggressively via AI personalization messaging and the `.marketing` domain.
+2. **Monetization delay** — Product is built but Stripe is not. Every week without payments is a week competitors can catch up. Ship Stripe integration ASAP.
+3. **SEO competition** — New 2026-dated content from AppLaunchFlow, indie.build, and DEV.to is eating search volume. Publish task-based blog content to compete.

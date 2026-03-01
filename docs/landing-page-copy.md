@@ -1,6 +1,6 @@
 # LaunchPilot — Landing Page Copy
 
-All copy for the 10 landing page sections. Exact text ready for implementation.
+All copy for the 11 landing page sections. Exact text ready for implementation.
 
 ---
 
@@ -19,18 +19,29 @@ All copy for the 10 landing page sections. Exact text ready for implementation.
 
 ## 2. Hero Section
 
+**Eyebrow badge:** For indie developers
+
 **Primary headline (gradient text):**
-Ship your launch. Stop winging it.
+Go from shipped to paid.
 
 **Subheadline:**
-LaunchPilot is a 32-task checklist that takes you from "I built a thing" to paying customers — with AI-generated copy personalized to your app, and zero marketing degree required.
+32 battle-tested tasks across 4 phases. From validating your idea to landing your first 10 paying customers — with AI-generated copy, templates, and a step-by-step playbook that actually ships.
 
-**Primary CTA button:** Get LaunchPilot Free
+**Primary CTA button:** Start Your Launch Checklist — Free
 
-**Secondary CTA text:** See pricing →
+**Secondary CTA text:** See Pricing
 
 **Social proof micro-line:**
-Join 150+ indie devs shipping faster
+Free forever on Phase 1 · No credit card required · Set up in 2 minutes
+
+**Email capture label:** Or get early access updates:
+
+**Email capture placeholder:** your@email.com
+
+**Email capture button:** Notify Me
+
+**Email capture success message:**
+You're on the list. We'll be in touch.
 
 ---
 
@@ -138,6 +149,25 @@ Title: Not a course. Not a book. A checklist.
 Description: Courses require motivation. Books require interpretation. A checklist just requires execution. LaunchPilot tells you what to do, in what order, with enough context to not get stuck — and nothing else.
 
 Example: Task 7: "Submit to Indie Hackers". You get the exact post format, a prompt to generate your content, a screenshot of what a good post looks like, and a checkbox when you're done. That's the whole thing.
+
+---
+
+## 5.5 Mid-Page Email Capture Section
+
+**Eyebrow label:** Get launch updates
+
+**Headline:**
+Not ready to start? Stay in the loop.
+
+**Subtext:**
+Join the mailing list for launch tips, new tasks, and indie dev strategies. No spam. Unsubscribe anytime.
+
+**Email input placeholder:** your@email.com
+
+**Button:** Subscribe
+
+**Success message:**
+You're on the list. We'll be in touch.
 
 ---
 
@@ -284,11 +314,23 @@ Launcher is $29 one-time. Pro is $9/month. Free is free.
 
 ## 10. Footer
 
-**Copyright text:**
-© 2026 LaunchPilot. Built for developers who ship.
+**Logo text:** Launch**Pilot**
+
+**Tagline:** From shipped to paid.
+
+**Email capture label:** Get launch tips in your inbox:
+
+**Email capture placeholder:** your@email.com
+
+**Email capture button:** Subscribe
+
+**Email capture success message:** Subscribed!
 
 **Link labels:**
-- Privacy Policy
-- Terms of Service
+- Pricing
+- Privacy
+- Terms
 - Twitter / X
-- GitHub
+
+**Copyright text:**
+© 2026 LaunchPilot. Built by an indie dev, for indie devs.

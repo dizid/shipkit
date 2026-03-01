@@ -12,6 +12,7 @@ Most devs can build a product but have no idea how to launch it. LaunchPilot giv
 - **Opinionated tool picks** — one recommendation per category, not 20 options
 - **Copy-paste templates** — ready-to-use text for Product Hunt, Indie Hackers, Hacker News, Twitter, email
 - **Developer-native language** — no marketing jargon
+- **Email capture system** — Buttondown + Supabase dual-write with source and UTM tracking
 
 ### Pricing
 - **Free**: Phase 1 (5 tasks) + 40 AI generations/month
@@ -44,17 +45,17 @@ src/
   components/
     Auth/           # Sign in, sign up, password reset
     Dashboard/      # Task dashboard + task detail workbench
-    LandingPage/    # 10 section components (hero, pricing, FAQ, etc.)
+    LandingPage/    # 11 section components (hero, email capture, pricing, FAQ, etc.)
     Onboarding/     # Project setup wizard
     Pricing/        # Standalone pricing page
     Settings/       # Project settings
     shared/         # ErrorBoundary
-  composables/      # useTaskFormData, useSaveState, useSeo, useUtm, useAnalytics
+  composables/      # useTaskFormData, useSaveState, useSeo, useUtm, useAnalytics, useEmailCapture
   services/         # aiGeneration, taskDataService, projectService
   stores/           # authStore, projectStore
   tasks/            # 32 task definitions across 4 phase files
   utils/            # Supabase client, logger, retry
-netlify/functions/  # claude-proxy (AI API + quota enforcement)
+netlify/functions/  # claude-proxy (AI API + quota), buttondown-subscribe (email capture)
 docs/               # Marketing copy, social content
 public/             # Logo, favicon, OG images
 ```

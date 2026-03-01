@@ -83,41 +83,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { supabase } from '@/utils/supabase'
+import { useEmailCapture } from '@/composables/useEmailCapture'
 import { useAnalytics } from '@/composables/useAnalytics'
-import { useUtm } from '@/composables/useUtm'
 
-const { trackCtaClick, trackEmailCapture } = useAnalytics()
-const utm = useUtm()
-
-const email = ref('')
-const submitted = ref(false)
-const loading = ref(false)
-const captureError = ref(null)
-
-async function captureEmail() {
-  if (!email.value) return
-  loading.value = true
-  captureError.value = null
-  try {
-    const { error: err } = await supabase
-      .from('waitlist')
-      .insert({ email: email.value, source: 'hero', utm_data: utm })
-    if (err) throw err
-    submitted.value = true
-    trackEmailCapture('hero')
-  } catch (e) {
-    // 23505 = unique_violation (duplicate email) — treat as success
-    if (e.code === '23505') {
-      submitted.value = true
-    } else {
-      captureError.value = 'Something went wrong. Try again.'
-    }
-  } finally {
-    loading.value = false
-  }
-}
+const { trackCtaClick } = useAnalytics()
+const { email, submitted, loading, error: captureError, captureEmail } = useEmailCapture('hero')
 
 function scrollToPricing() {
   const el = document.getElementById('pricing')

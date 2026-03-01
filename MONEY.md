@@ -54,13 +54,13 @@ VITE_STRIPE_PRO_PRICE_ID=price_...
 **1. Database migration** -- Add `app` column to shared Supabase tables (shared instance with LaunchPilot):
 - `subscriptions` table: add `app TEXT`, `stripe_price_id TEXT`, `purchase_type TEXT` columns
 - `ai_usage` table: add `app TEXT` column
-- RLS policies filtering by `app = 'shipkit'`
+- RLS policies filtering by `app = 'launchpilot'`
 - If tables don't exist, create them with full schema
 
 **2. `netlify/functions/stripe-checkout.cjs`** (NEW)
 - Verify auth, accept `priceId`
 - Determine mode: `payment` (Launcher) or `subscription` (Pro)
-- Get/create Stripe customer (lookup by `user_id + app='shipkit'`)
+- Get/create Stripe customer (lookup by `user_id + app='launchpilot'`)
 - Create Checkout Session, return `{ url }`
 - Reference: `/home/marc/DEV/sales/netlify/functions/stripe-create-subscription.cjs`
 
@@ -75,8 +75,8 @@ VITE_STRIPE_PRO_PRICE_ID=price_...
 - Reference: `/home/marc/DEV/sales/netlify/functions/stripe-portal-session.cjs`
 
 **5. Update `netlify/functions/claude-proxy.cjs`** (EXISTING)
-- Add `app = 'shipkit'` filter to subscription lookup (line ~168) and ai_usage count (line ~161)
-- Add `app: 'shipkit'` to ai_usage insert (line ~37)
+- Add `app = 'launchpilot'` filter to subscription lookup (line ~168) and ai_usage count (line ~161)
+- Add `app: 'launchpilot'` to ai_usage insert (line ~37)
 
 **6. Update `netlify/functions/utils/auth.cjs`** -- Add LaunchPilot domain to CORS origins
 
@@ -86,7 +86,7 @@ VITE_STRIPE_PRO_PRICE_ID=price_...
 - State: `subscription`, `aiUsage`, `isLoading`
 - Computed: `tier`, `effectiveTier`, `isFree/isLauncher/isPro`, `canAccessTask(taskTier)`, `canGenerateAI`
 - Methods: `fetchSubscription()`, `fetchAIUsage()`, `createCheckoutSession(priceId)`, `createPortalSession()`
-- Query Supabase with `app = 'shipkit'` filter
+- Query Supabase with `app = 'launchpilot'` filter
 - Reference: `/home/marc/DEV/sales/src/stores/quotaStore.js` (simplified, no domain model layer)
 
 **2. `src/components/Pricing/PricingPage.vue`** (NEW)
@@ -198,8 +198,8 @@ CREATE INDEX IF NOT EXISTS idx_subscriptions_app_user ON public.subscriptions (a
 CREATE INDEX IF NOT EXISTS idx_ai_usage_app_user ON public.ai_usage (app, user_id);
 
 -- RLS
-CREATE POLICY "shipkit_users_read_own_subscription" ON public.subscriptions
-  FOR SELECT USING (auth.uid() = user_id AND app = 'shipkit');
+CREATE POLICY "launchpilot_users_read_own_subscription" ON public.subscriptions
+  FOR SELECT USING (auth.uid() = user_id AND app = 'launchpilot');
 ```
 
 If tables don't exist yet, create full schema (see plan agent output for complete CREATE TABLE statements).

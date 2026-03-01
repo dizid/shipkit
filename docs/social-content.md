@@ -1,5 +1,7 @@
 # LaunchPilot — Social Media Launch Content
 
+*Status: Pre-written launch day content. Update "Launched today" references when actual launch date is set.*
+
 All social content for launch day. Platform-native formats, developer voice throughout.
 
 ---

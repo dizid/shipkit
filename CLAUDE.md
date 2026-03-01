@@ -17,11 +17,11 @@ App runs on port 3000. Do NOT use `netlify dev`.
 ## Key Directories
 - `src/tasks/` - Single task registry (schema + 4 phase files)
 - `src/components/` - Vue components by domain (Auth, Dashboard, LandingPage, Onboarding, Pricing, ReadinessScore, Settings, shared)
-- `src/components/LandingPage/` - 10 section components (NavBar, Hero, Problem, Solution, Features, Pricing, Comparison, FAQ, FinalCta, Footer)
+- `src/components/LandingPage/` - 11 section components (NavBar, Hero, Problem, Solution, Features, MidPageCapture, Pricing, Comparison, FAQ, FinalCta, Footer)
 - `src/stores/` - Pinia stores (authStore, projectStore)
 - `src/services/` - API services (aiGeneration, taskDataService, projectService)
-- `src/composables/` - Vue composables (useTaskFormData, useSaveState, useUnsavedChanges, useSeo, useUtm, useAnalytics)
-- `netlify/functions/` - Serverless functions (claude-proxy)
+- `src/composables/` - Vue composables (useTaskFormData, useSaveState, useUnsavedChanges, useSeo, useUtm, useAnalytics, useEmailCapture)
+- `netlify/functions/` - Serverless functions (claude-proxy, buttondown-subscribe)
 - `docs/` - Marketing copy (landing-page-copy.md, social-content.md)
 - `public/` - Brand assets (logo.svg, favicon.svg, og-image.svg, og-twitter.svg)
 
@@ -61,7 +61,7 @@ All 32 tasks defined in `src/tasks/`:
 - Mobile-first responsive design
 
 ## Routes
-- `/` - Landing page (public, 10 section components)
+- `/` - Landing page (public, 11 section components)
 - `/pricing` - Standalone pricing page (public)
 - `/score` - Launch readiness score (public)
 - `/auth` - Sign in / Sign up (public)
@@ -80,8 +80,8 @@ Full implementation plan saved in Claude memory (MONEY.md).
 - GitHub repo: https://github.com/dizid/shipkit (repo name != brand name)
 - Supabase project: `aajllpghqmeulnvlruaj`
 - GA4 Measurement ID: `G-5BC4HZ0HNB`
-- Domain: TBD (placeholder `launchpilot.example.com` in meta tags)
-- Netlify: Not yet deployed
+- Domain: launchpilot.marketing
+- Netlify site: `launchpilot2` (ID: `e154184f-55fc-4fbf-9a5f-a8431bfc4aa8`)
 
 ## Origin
 Cherry-picked proven patterns from the sales project (`/home/marc/DEV/sales`).
