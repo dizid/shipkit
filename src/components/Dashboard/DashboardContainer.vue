@@ -122,9 +122,12 @@
             v-for="(task, index) in activePhase.tasks"
             :key="task.id"
             class="p-4 flex items-start gap-4"
-            style="background: var(--cyberpunk-surface); border: 1px solid var(--cyberpunk-border); transition: all 0.2s ease; cursor: pointer;"
-            :style="completedTaskIds.has(task.id) ? { borderColor: 'rgba(0,255,136,0.3)', background: 'rgba(0,255,136,0.04)' } : {}"
-            @mouseenter="e => e.currentTarget.style.borderColor = 'var(--cyberpunk-border-strong)'"
+            style="background: var(--cyberpunk-surface); border: 1px solid var(--cyberpunk-border); transition: all 0.2s ease; cursor: pointer; position: relative;"
+            :style="{
+              ...(completedTaskIds.has(task.id) ? { borderColor: 'rgba(0,255,136,0.3)', background: 'rgba(0,255,136,0.04)' } : {}),
+              ...(!subscriptionStore.canAccessTask(task.tier) ? { opacity: '0.55', cursor: 'default' } : {})
+            }"
+            @mouseenter="e => { if (subscriptionStore.canAccessTask(task.tier)) e.currentTarget.style.borderColor = 'var(--cyberpunk-border-strong)' }"
             @mouseleave="e => e.currentTarget.style.borderColor = completedTaskIds.has(task.id) ? 'rgba(0,255,136,0.3)' : 'var(--cyberpunk-border)'"
             @click="openTask(task.id)"
           >
@@ -168,6 +171,16 @@
                 >
                   {{ task.title }}
                 </span>
+                <!-- Lock icon for inaccessible tasks -->
+                <svg
+                  v-if="!subscriptionStore.canAccessTask(task.tier)"
+                  width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="opacity: 0.6; flex-shrink: 0;"
+                  :style="{ color: tierColor(task.tier) }"
+                >
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
                 <!-- Tier badge (non-free tasks) -->
                 <span
                   v-if="task.tier !== 'free'"
@@ -206,14 +219,29 @@
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useAuthStore } from '@/stores/authStore'
 import { useProjectStore } from '@/stores/projectStore'
+import { useSubscriptionStore } from '@/stores/subscriptionStore'
 import { tasks as allTasks, phases as phasesMeta } from '@/tasks/index.js'
 
 const router = useRouter()
+const route = useRoute()
 const authStore = useAuthStore()
 const projectStore = useProjectStore()
+const subscriptionStore = useSubscriptionStore()
+
+// Initialize subscription data
+onMounted(async () => {
+  await subscriptionStore.initialize()
+
+  // Handle checkout success redirect
+  if (route.query.checkout === 'success') {
+    await subscriptionStore.fetchSubscription()
+    // Clean the URL
+    router.replace({ path: '/dashboard', query: {} })
+  }
+})
 
 // Selected phase — default to Phase 1
 const selectedPhase = ref(1)
@@ -305,7 +333,13 @@ const toggleTask = async (taskId) => {
 }
 
 // Navigate to task detail — uses the real task ID from the registry
+// Locked tasks show upgrade prompt instead
 const openTask = (taskId) => {
+  const task = allTasks.find(t => t.id === taskId)
+  if (task && !subscriptionStore.canAccessTask(task.tier)) {
+    // Don't navigate — the lock overlay handles it
+    return
+  }
   router.push({ name: 'TaskDetail', params: { taskId } })
 }
 

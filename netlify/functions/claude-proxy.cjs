@@ -41,7 +41,8 @@ async function trackAIUsage(userId, taskId, model, tokensInput, tokensOutput) {
         model: model,
         tokens_input: tokensInput,
         tokens_output: tokensOutput,
-        cost_estimate: 0 // Calculated server-side if needed
+        cost_estimate: 0, // Calculated server-side if needed
+        app: 'launchpilot'
       }])
 
     if (error) {
@@ -160,6 +161,7 @@ exports.handler = async (event) => {
         .from('ai_usage')
         .select('*', { count: 'exact', head: true })
         .eq('user_id', userId)
+        .eq('app', 'launchpilot')
         .gte('created_at', startOfMonth.toISOString())
 
       if (!countError) {
@@ -168,6 +170,7 @@ exports.handler = async (event) => {
           .from('subscriptions')
           .select('tier')
           .eq('user_id', userId)
+          .eq('app', 'launchpilot')
           .single()
 
         const tier = subData?.tier || 'free'

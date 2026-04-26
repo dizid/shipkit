@@ -28,6 +28,22 @@ export async function generateAIContent(config, formData, options = {}) {
     throw new Error('No aiConfig found in task configuration')
   }
 
+  // Client-side quota check (server also enforces this)
+  if (!options.skipQuotaCheck) {
+    const { useSubscriptionStore } = await import('@/stores/subscriptionStore')
+    const subscriptionStore = useSubscriptionStore()
+    if (!subscriptionStore.canGenerateAI) {
+      const error = new Error('Monthly AI generation quota exceeded')
+      error.code = 'QUOTA_EXCEEDED'
+      error.quota = {
+        used: subscriptionStore.aiQuotaUsed,
+        limit: subscriptionStore.aiQuotaLimit,
+        tier: subscriptionStore.tier
+      }
+      throw error
+    }
+  }
+
   const { aiConfig } = config
 
   // Build prompt by replacing placeholders

@@ -1,5 +1,8 @@
 <template>
   <div class="task-detail">
+    <!-- Quota Exceeded Modal -->
+    <QuotaExceededModal v-if="showQuotaModal" @close="showQuotaModal = false" />
+
     <!-- Unsaved Changes Warning Dialog -->
     <div v-if="showUnsavedWarning" class="unsaved-overlay">
       <div class="unsaved-dialog">
@@ -33,7 +36,14 @@
       </div>
     </div>
 
-    <div v-if="task" class="task-body">
+    <!-- Locked task — show upgrade prompt -->
+    <div v-if="task && isLocked" class="task-body">
+      <p class="task-description">{{ task.description }}</p>
+      <UpgradePrompt :requiredTier="task.tier" />
+    </div>
+
+    <!-- Unlocked task — full content -->
+    <div v-else-if="task" class="task-body">
       <p class="task-description">{{ task.description }}</p>
 
       <!-- Steps (interactive with subtask checkboxes) -->
@@ -260,6 +270,9 @@ import { generateAIContent } from '@/services/aiGeneration.js'
 import { useTaskFormData } from '@/composables/useTaskFormData.js'
 import { useUnsavedChanges } from '@/composables/useUnsavedChanges.js'
 import { useProjectStore } from '@/stores/projectStore.js'
+import { useSubscriptionStore } from '@/stores/subscriptionStore.js'
+import UpgradePrompt from '@/components/Pricing/UpgradePrompt.vue'
+import QuotaExceededModal from '@/components/Pricing/QuotaExceededModal.vue'
 
 const props = defineProps({
   taskId: { type: String, required: true }
@@ -267,8 +280,10 @@ const props = defineProps({
 
 const router = useRouter()
 const projectStore = useProjectStore()
+const subscriptionStore = useSubscriptionStore()
 
 const task = computed(() => findTask(props.taskId))
+const isLocked = computed(() => task.value && !subscriptionStore.canAccessTask(task.value.tier))
 
 // ── Project context ──────────────────────────────────────────────────────────
 const projectId = computed(() => projectStore.currentProjectId)
@@ -372,6 +387,7 @@ const isGenerating = ref(false)
 const aiOutput = ref('')
 const aiError = ref('')
 const justCopied = ref(false)
+const showQuotaModal = ref(false)
 
 async function handleGenerate() {
   if (!task.value?.aiConfig || !allRequiredFilled.value) return
@@ -381,8 +397,14 @@ async function handleGenerate() {
   try {
     const result = await generateAIContent(task.value, formData.value)
     aiOutput.value = typeof result === 'string' ? result : JSON.stringify(result, null, 2)
+    // Refresh quota count after successful generation
+    subscriptionStore.fetchAIUsage()
   } catch (err) {
-    aiError.value = err.message || 'Something went wrong. Please try again.'
+    if (err.code === 'QUOTA_EXCEEDED') {
+      showQuotaModal.value = true
+    } else {
+      aiError.value = err.message || 'Something went wrong. Please try again.'
+    }
   } finally {
     isGenerating.value = false
   }

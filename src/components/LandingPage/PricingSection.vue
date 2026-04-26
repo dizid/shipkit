@@ -50,7 +50,17 @@
               <span class="pricing__check pricing__check--launcher">✓</span> {{ f }}
             </li>
           </ul>
+          <span v-if="isCurrentTier('launcher')" class="pricing__current-badge">Current Plan</span>
+          <button
+            v-else-if="isAuthenticated"
+            class="pricing__cta btn-highlight"
+            :disabled="subscriptionStore.isLoading"
+            @click="handleCheckout('launcher')"
+          >
+            Get Launcher — $29
+          </button>
           <router-link
+            v-else
             to="/auth"
             class="pricing__cta btn-highlight"
             @click="trackCta('pricing-launcher')"
@@ -74,7 +84,17 @@
               <span class="pricing__check pricing__check--pro">✓</span> {{ f }}
             </li>
           </ul>
+          <span v-if="isCurrentTier('pro')" class="pricing__current-badge">Current Plan</span>
+          <button
+            v-else-if="isAuthenticated"
+            class="pricing__cta btn-accent"
+            :disabled="subscriptionStore.isLoading"
+            @click="handleCheckout('pro')"
+          >
+            Get Pro — $9/mo
+          </button>
           <router-link
+            v-else
             to="/auth"
             class="pricing__cta btn-accent"
             @click="trackCta('pricing-pro')"
@@ -92,12 +112,33 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useAnalytics } from '@/composables/useAnalytics'
+import { useAuthStore } from '@/stores/authStore'
+import { useSubscriptionStore } from '@/stores/subscriptionStore'
 
 const { trackCtaClick } = useAnalytics()
+const authStore = useAuthStore()
+const subscriptionStore = useSubscriptionStore()
+
+const isAuthenticated = computed(() => authStore.isAuthenticated)
+
+function isCurrentTier(tier) {
+  return subscriptionStore.tier === tier
+}
 
 function trackCta(location) {
   trackCtaClick(location)
+}
+
+const priceIds = {
+  launcher: import.meta.env.VITE_STRIPE_LAUNCHER_PRICE_ID,
+  pro: import.meta.env.VITE_STRIPE_PRO_PRICE_ID
+}
+
+async function handleCheckout(tier) {
+  trackCta(`pricing-${tier}`)
+  await subscriptionStore.createCheckoutSession(priceIds[tier])
 }
 
 const freeFeatures = [
@@ -308,6 +349,24 @@ const proFeatures = [
 .pricing__cta.btn-accent:hover {
   background: var(--cyberpunk-accent-light);
   box-shadow: 0 0 20px rgba(201, 0, 79, 0.4);
+}
+
+.pricing__current-badge {
+  display: block;
+  text-align: center;
+  padding: 0.875rem 1rem;
+  font-weight: 700;
+  font-size: 0.925rem;
+  font-family: var(--font-body);
+  color: var(--cyberpunk-text-secondary);
+  border: 1px solid var(--cyberpunk-border);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pricing__cta:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .pricing__footer-note {

@@ -102,8 +102,34 @@
               <span class="tier-badge" :class="`tier-${currentTier}`">{{ currentTier }}</span>
             </p>
           </div>
-          <button v-if="currentTier === 'free'" class="btn btn-primary">Upgrade</button>
+          <div class="setting-actions">
+            <button
+              v-if="subscriptionStore.isFree"
+              class="btn btn-primary"
+              @click="subscriptionStore.createCheckoutSession(launcherPriceId)"
+              :disabled="subscriptionStore.isLoading"
+            >
+              Upgrade to Launcher — $29
+            </button>
+            <button
+              v-if="subscriptionStore.isLauncher"
+              class="btn btn-primary"
+              @click="subscriptionStore.createCheckoutSession(proPriceId)"
+              :disabled="subscriptionStore.isLoading"
+            >
+              Upgrade to Pro — $9/mo
+            </button>
+            <button
+              v-if="subscriptionStore.isPro"
+              class="btn btn-secondary"
+              @click="subscriptionStore.createPortalSession()"
+              :disabled="subscriptionStore.isLoading"
+            >
+              Manage Billing
+            </button>
+          </div>
         </div>
+        <QuotaDisplay />
       </section>
 
     </div>
@@ -115,13 +141,23 @@ import { ref, computed, reactive, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/authStore'
 import { useProjectStore } from '@/stores/projectStore'
+import { useSubscriptionStore } from '@/stores/subscriptionStore'
+import QuotaDisplay from '@/components/Pricing/QuotaDisplay.vue'
 
 const router = useRouter()
 const authStore = useAuthStore()
 const projectStore = useProjectStore()
+const subscriptionStore = useSubscriptionStore()
 
 const userEmail = computed(() => authStore.user?.email || '')
-const currentTier = computed(() => 'free') // Wire to subscription store when implemented
+const currentTier = computed(() => subscriptionStore.tier)
+const launcherPriceId = import.meta.env.VITE_STRIPE_LAUNCHER_PRICE_ID
+const proPriceId = import.meta.env.VITE_STRIPE_PRO_PRICE_ID
+
+// Initialize subscription data
+onMounted(() => {
+  subscriptionStore.initialize()
+})
 
 // ── Project form state ────────────────────────────────────────────────────────
 
