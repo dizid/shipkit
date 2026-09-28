@@ -3,7 +3,7 @@
     <div class="section__inner">
       <div class="section__header">
         <span class="badge badge-primary">The system</span>
-        <h2 class="section__title">4 phases. 32 tasks.<br>One clear path to customers.</h2>
+        <h2 class="section__title">4 phases. 33 tasks.<br>One clear path to customers.</h2>
         <p class="section__subtitle">
           LaunchPilot gives you the exact playbook in the right order, with AI doing the heavy lifting on copy and templates.
         </p>
@@ -48,7 +48,7 @@ const phaseBullets = {
   ],
   3: [
     'Build email sequences that sell for you',
-    'Drive SEO and content distribution',
+    'Drive SEO, AI visibility and content distribution',
     'Turn signups into paying customers with proven outreach'
   ],
   4: [

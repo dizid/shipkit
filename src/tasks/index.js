@@ -24,7 +24,7 @@ export {
 } from './schema.js'
 
 /**
- * All 32 tasks in phase order.
+ * All 33 tasks in phase order.
  * This is the canonical flat array used by all consumers.
  *
  * @type {import('./schema.js').TaskDefinition[]}

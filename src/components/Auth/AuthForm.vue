@@ -11,7 +11,7 @@
           {{ isSignUp ? 'Create Account' : 'Welcome Back' }}
         </h1>
         <p style="color: var(--cyberpunk-text-secondary); font-size: 0.9rem;">
-          {{ isSignUp ? 'Start your 32-step launch journey' : 'Sign in to your LaunchPilot account' }}
+          {{ isSignUp ? 'Start your 33-step launch journey' : 'Sign in to your LaunchPilot account' }}
         </p>
       </div>
 

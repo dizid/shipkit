@@ -46,7 +46,7 @@ const features = [
     title: 'Proven Task Sequences',
     accentColor: 'var(--cyberpunk-highlight)',
     description:
-      '32 tasks in the order that actually works. Pre-launch prep before the launch, retention before paid acquisition. No wasted effort on the wrong thing at the wrong time.',
+      '33 tasks in the order that actually works. Pre-launch prep before the launch, retention before paid acquisition. No wasted effort on the wrong thing at the wrong time.',
     example:
       'Task 8: "Submit to 5 directories" comes with a pre-built submission template and a list of the directories that still drive traffic.'
   },

@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: 'Is the $29 really a one-time payment?',
-    a: 'Yes. No hidden subscriptions. Pay once, access all 32 tasks forever. Updates to existing tasks are included at no extra cost. The Pro plan ($9/mo) adds monthly new strategies and priority support — but that\'s fully optional.'
+    a: 'Yes. No hidden subscriptions. Pay once, access all 33 tasks forever. Updates to existing tasks are included at no extra cost. The Pro plan ($9/mo) adds monthly new strategies and priority support — but that\'s fully optional.'
   },
   {
     q: 'What tech stack does LaunchPilot work with?',

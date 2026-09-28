@@ -137,6 +137,22 @@ exports.handler = async (event) => {
       }
     }
 
+    // Cap total input length to prevent oversized/abusive prompts driving up cost
+    // (max_tokens below only clamps OUTPUT - this guards INPUT size)
+    const MAX_INPUT_CHARS = 100000 // ~25k tokens, generous for this app's use case
+    const totalInputChars = messages.reduce((sum, msg) => {
+      const content = typeof msg.content === 'string' ? msg.content : JSON.stringify(msg.content || '')
+      return sum + content.length
+    }, 0)
+    if (totalInputChars > MAX_INPUT_CHARS) {
+      console.error('[claude-proxy] Input too large:', totalInputChars, 'chars (max', MAX_INPUT_CHARS, ')')
+      return {
+        statusCode: 400,
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': getCorsOrigin(event) },
+        body: JSON.stringify({ error: 'Input too large', maxChars: MAX_INPUT_CHARS, receivedChars: totalInputChars })
+      }
+    }
+
     // Clamp temperature and max_tokens to safe ranges
     temperature = Math.max(0, Math.min(1, temperature || 0.7))
     max_tokens = Math.max(1, Math.min(4096, max_tokens || 1500))
@@ -190,7 +206,8 @@ exports.handler = async (event) => {
       }
     }
 
-    const model = 'claude-sonnet-4-6'
+    // Haiku 4.5: $1/$5 per 1M tokens (~3x cheaper than Sonnet 4.6)
+    const model = 'claude-haiku-4-5'
     console.log('[claude-proxy] Forwarding request to Claude API with model:', model)
     console.log('[claude-proxy] Request has', messages.length, 'message(s)')
 

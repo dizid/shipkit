@@ -21,7 +21,7 @@
 
       <!-- Subheadline -->
       <p class="hero__sub">
-        32 battle-tested tasks across 4 phases. From validating your idea
+        33 battle-tested tasks across 4 phases. From validating your idea
         to landing your first 10 paying customers — with AI-generated copy,
         templates, and a step-by-step playbook that actually ships.
       </p>

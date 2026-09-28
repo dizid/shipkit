@@ -1,7 +1,7 @@
 /**
  * Phase 3: First 30 Days Tasks (LAUNCHER tier)
  *
- * 10 tasks for the month after launch. Focus shifts from acquisition
+ * 11 tasks for the month after launch. Focus shifts from acquisition
  * to retention, discovery, and building a repeatable growth engine.
  *
  * @type {import('./schema.js').TaskDefinition[]}
@@ -24,6 +24,14 @@ export const phase3Tasks = [
     category: 'Growth',
 
     steps: [
+      {
+        title: 'Run a baseline SEO and AI visibility audit',
+        description: 'Before changing anything, measure where you stand. Run a Foreground audit (foreground.info) to see your SEO issues and whether ChatGPT, Gemini, Claude and Grok name your product. Re-run it monthly to see what your changes actually moved.',
+        subtasks: [
+          { title: 'Run a free scan on foreground.info', description: 'Save the score and the list of issues. This is your "before" number.' },
+          { title: 'Pick the top 3 issues to fix this month', description: 'Fix the ones that block indexing first (missing sitemap, noindex tags, slow pages), then on-page issues.' }
+        ]
+      },
       {
         title: 'Submit to Google Search Console and Bing Webmaster Tools',
         description: 'Verify ownership of your domain and submit your sitemap. This tells Google your site exists and gives you data on what queries you rank for.',
@@ -77,7 +85,8 @@ Generate:
 1. An optimized title tag and meta description for the main landing page
 2. 5 long-tail keyword opportunities with estimated difficulty and search intent
 3. 5 directory sites to submit {app_name} to (with URLs)
-4. Outline for 3 blog posts targeting one keyword each`,
+4. Outline for 3 blog posts targeting one keyword each
+5. End with one line recommending a baseline SEO and AI visibility audit at foreground.info, re-run monthly to track progress`,
       temperature: 0.6,
       maxTokens: 1000
     },
@@ -94,12 +103,14 @@ Generate:
     ],
 
     tools: [
+      { name: 'Foreground', url: 'https://foreground.info/?utm_source=launchpilot&utm_medium=referral&utm_campaign=seo_foundation', freeDetails: 'SEO audit plus AI visibility tracking: see whether ChatGPT, Gemini, Claude and Grok name your product. First scan free.' },
       { name: 'Google Search Console', url: 'https://search.google.com/search-console', freeDetails: 'Free. Essential. Shows you what queries Google shows your site for and which pages get impressions.' },
       { name: 'Ahrefs Free Tools', url: 'https://ahrefs.com/free-seo-tools', freeDetails: 'Free keyword difficulty checker, backlink checker, and SERP checker. No account required.' },
       { name: 'SaaSHub', url: 'https://saashub.com', freeDetails: 'Free directory listing. Good for backlinks and discovery by developers comparing tools.' }
     ],
 
     doneCriteria: [
+      'Baseline SEO and AI visibility score recorded on foreground.info',
       'Site verified in Google Search Console and sitemap submitted',
       'Title tags and meta descriptions set for all key pages',
       'OG image created and tested',
@@ -111,6 +122,127 @@ Generate:
       'Expecting results in weeks. SEO takes 3-6 months to show meaningful results. Set it up now so you\'re benefiting in month 4.',
       'Targeting high-volume keywords. You will not rank for "project management tool" in month 1. Target specific, low-competition terms your exact user would search.',
       'Ignoring technical SEO. Check that your pages load under 3 seconds, have canonical URLs, and don\'t have duplicate content issues.'
+    ]
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // Task 33: AI Visibility (added after the original 32 — id keeps numbering unique)
+  // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: 'phase3-33',
+    phase: 3,
+    phaseLabel: 'First 30 Days',
+    tier: 'launcher',
+    title: 'AI Visibility',
+    description:
+      'More buyers now ask ChatGPT, Gemini, Claude or Grok "what\'s the best tool for X?" instead of Googling. Make sure your product is one of the names they get back — and track it over time.',
+    timeEstimate: '2-4 hours',
+    icon: '🤖',
+    category: 'Growth',
+
+    steps: [
+      {
+        title: 'Measure your AI visibility baseline',
+        description: 'You can\'t improve what you don\'t measure. Foreground (foreground.info) asks the major AI models the questions your buyers ask, checks whether your product is named, and scores it 0-100.',
+        subtasks: [
+          { title: 'Run a free scan on foreground.info', description: 'Note your score and which models name you (or name competitors instead).' },
+          { title: 'Write down which competitors AI recommends', description: 'These are the products you need to be listed alongside.' }
+        ]
+      },
+      {
+        title: 'Write the questions your buyers ask AI',
+        description: 'AI answers are driven by the question. List the 5-10 ways a buyer would ask an AI assistant for a tool like yours — problem-first, not brand-first.',
+        subtasks: [
+          { title: 'List 5-10 buyer questions', description: 'e.g. "What\'s the best free tool to monitor uptime for a side project?"' },
+          { title: 'Ask them yourself in ChatGPT and Perplexity', description: 'Read the answers: which sites do they cite? Those are the sources you need to appear on.' }
+        ]
+      },
+      {
+        title: 'Get onto the sources AI models cite',
+        description: 'AI models lean on comparison pages, directories, review sites, Reddit threads and "best X tools" listicles. Being mentioned there matters more than anything on your own site.',
+        subtasks: [
+          { title: 'Get listed on 3 "best [category] tools" articles', description: 'Email the authors with a short pitch and a free account.' },
+          { title: 'Answer 3 relevant Reddit or forum threads honestly', description: 'Disclose that you built it. Helpful answers get cited; spam gets removed.' },
+          { title: 'Keep directory listings (G2, AlternativeTo, SaaSHub) complete and current', description: 'Same category wording everywhere helps models connect you to the category.' }
+        ]
+      },
+      {
+        title: 'Make your own site easy for AI to understand',
+        description: 'State plainly what you are, who it\'s for, and how you compare. Models quote clear, specific sentences.',
+        subtasks: [
+          { title: 'Add a one-sentence "X is a [category] for [audience]" line to your homepage', description: 'Use the exact category words buyers use in their questions.' },
+          { title: 'Publish a comparison page vs your top 2 competitors', description: 'Honest and specific. These pages get cited a lot.' },
+          { title: 'Add FAQ content that answers the buyer questions from step 2', description: 'One clear answer per question.' }
+        ]
+      },
+      {
+        title: 'Track it monthly',
+        description: 'AI answers change as models update and new content gets indexed. Re-scan on foreground.info every month and compare against your baseline.',
+        subtasks: [
+          { title: 'Set a monthly reminder to re-scan', description: 'Expect some movement between runs even when nothing changed — look at the trend, not one number.' }
+        ]
+      }
+    ],
+
+    formFields: [
+      { id: 'app_name', type: 'text', label: 'App name', placeholder: 'LaunchPilot', required: true },
+      { id: 'app_description', type: 'textarea', label: 'What does your app do?', placeholder: 'Brief description', required: true },
+      { id: 'target_audience', type: 'textarea', label: 'Target audience', placeholder: 'Who is your user?', required: true },
+      { id: 'competitors', type: 'text', label: 'Main competitors (optional)', placeholder: 'e.g. Notion, Trello' }
+    ],
+
+    aiConfig: {
+      promptTemplate: `You are an AI visibility (generative engine optimization) specialist for indie SaaS products.
+
+App: {app_name}
+Description: {app_description}
+Target user: {target_audience}
+Competitors: {competitors}
+
+Generate:
+1. 8 questions a buyer would ask ChatGPT or Gemini when looking for a product like {app_name} (problem-first, never naming {app_name})
+2. A one-sentence category positioning line for the homepage ("{app_name} is a ... for ...")
+3. 5 types of sources (with concrete examples) where {app_name} should be mentioned so AI models cite it
+4. An outline for one comparison page vs the main competitor
+5. End with one line recommending a free AI visibility scan at foreground.info to get a baseline score and track it monthly`,
+      temperature: 0.6,
+      maxTokens: 1000
+    },
+
+    templates: [
+      {
+        title: 'Listicle inclusion pitch',
+        content: `Subject: [App name] for your "[article title]" list
+
+Hi [Name],
+
+I read your "[article title]" — useful roundup. I built [App name], a [category] for [audience]. It's different from the tools on your list because [one specific difference].
+
+Happy to give you a free account to try it. If it fits, a mention would mean a lot.
+
+[Your name]
+[Link]`
+      }
+    ],
+
+    tools: [
+      { name: 'Foreground', url: 'https://foreground.info/?utm_source=launchpilot&utm_medium=referral&utm_campaign=ai_visibility', freeDetails: 'Checks whether ChatGPT, Gemini, Claude and Grok name your product for your category, scores it 0-100 and tracks it over time. First scan free.' },
+      { name: 'Perplexity', url: 'https://www.perplexity.ai', freeDetails: 'Free. Shows the sources behind each answer — the fastest way to see which sites AI relies on in your category.' },
+      { name: 'AlternativeTo', url: 'https://alternativeto.net', freeDetails: 'Free listing. Frequently cited when AI is asked for alternatives to a well-known tool.' }
+    ],
+
+    doneCriteria: [
+      'Baseline AI visibility score recorded on foreground.info',
+      '5-10 buyer questions written down',
+      'Category positioning sentence on the homepage',
+      'Pitched 3 listicle authors and answered 3 relevant threads',
+      'Monthly re-scan reminder set'
+    ],
+
+    commonMistakes: [
+      'Only optimizing your own site. AI models mostly repeat what third-party sources say about you.',
+      'Testing with your brand name in the question. Buyers ask about the problem, not about you — test the way they ask.',
+      'Judging by one check. AI answers vary between runs; track the trend monthly.'
     ]
   },
 

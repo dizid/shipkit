@@ -1,13 +1,13 @@
 # LaunchPilot - Project Guide
 
-The guided launch checklist for indie developers. Helps devs go from "I built a thing" to paying customers — 32 tasks across 4 phases.
+The guided launch checklist for indie developers. Helps devs go from "I built a thing" to paying customers — 33 tasks across 4 phases.
 
 ## Tech Stack
 - Vue 3 + Vite + Tailwind CSS v4
 - Pinia stores
 - Supabase (auth + DB — shared with LaunchPilot, same instance)
 - Netlify Functions (serverless)
-- Claude AI API (via claude-proxy.cjs)
+- Claude AI API via claude-proxy.cjs (model: claude-haiku-4-5)
 - Stripe (subscriptions + one-time payments)
 
 ## Dev Setup
@@ -26,17 +26,17 @@ App runs on port 3000. Do NOT use `netlify dev`.
 - `public/` - Brand assets (logo.svg, favicon.svg, og-image.svg, og-twitter.svg)
 
 ## Architecture: ONE Task System
-All 32 tasks defined in `src/tasks/`:
+All 33 tasks defined in `src/tasks/`:
 - `schema.js` - Task type definition + helper functions
 - `phase1-prelaunch.js` - Tasks 1-5 (FREE tier)
 - `phase2-launch.js` - Tasks 6-12 ($29 Launcher tier)
-- `phase3-growth.js` - Tasks 13-22 ($29 Launcher tier)
+- `phase3-growth.js` - Tasks 13-22 + Task 33 AI Visibility ($29 Launcher tier)
 - `phase4-scaling.js` - Tasks 23-32 ($9/mo Pro tier)
 - `index.js` - Single registry, exports everything
 
 ## Pricing Tiers
 - **Free**: Phase 1 (Tasks 1-5) + limited AI advice
-- **Launcher** ($29 one-time): All 32 tasks + templates + unlimited AI
+- **Launcher** ($29 one-time): All 33 tasks + templates + unlimited AI
 - **Pro** ($9/month): Launcher + monthly new strategies + priority support
 
 ## Code Style

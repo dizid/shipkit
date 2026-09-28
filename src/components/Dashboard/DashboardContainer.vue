@@ -294,7 +294,7 @@ const phases = computed(() => {
   })
 })
 
-// Compute totals across all 32 real tasks
+// Compute totals across all real tasks
 const totalTasks = computed(() => allTasks.length)
 const totalCompleted = computed(() => completedTaskIds.value.size)
 const overallProgressPercent = computed(() => {

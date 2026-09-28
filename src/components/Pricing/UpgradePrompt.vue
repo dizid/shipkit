@@ -29,7 +29,7 @@ const tierConfig = computed(() => {
       color: '#00d9ff',
       priceId: import.meta.env.VITE_STRIPE_LAUNCHER_PRICE_ID,
       features: [
-        'All 32 launch tasks',
+        'All 33 launch tasks',
         'Templates & frameworks',
         'Unlimited AI generations'
       ]

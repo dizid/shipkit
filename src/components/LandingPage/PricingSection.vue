@@ -151,7 +151,7 @@ const freeFeatures = [
 
 const launcherFeatures = [
   'Everything in Free',
-  'All 32 tasks across 4 phases',
+  'All 33 tasks across 4 phases',
   'Unlimited AI copy generation',
   'Email sequence templates',
   'Directory submission pack',
