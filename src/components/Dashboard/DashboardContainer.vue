@@ -125,7 +125,7 @@
             style="background: var(--cyberpunk-surface); border: 1px solid var(--cyberpunk-border); transition: all 0.2s ease; cursor: pointer; position: relative;"
             :style="{
               ...(completedTaskIds.has(task.id) ? { borderColor: 'rgba(0,255,136,0.3)', background: 'rgba(0,255,136,0.04)' } : {}),
-              ...(!subscriptionStore.canAccessTask(task.tier) ? { opacity: '0.55', cursor: 'default' } : {})
+              ...(!subscriptionStore.canAccessTask(task.tier) ? { cursor: 'default' } : {})
             }"
             @mouseenter="e => { if (subscriptionStore.canAccessTask(task.tier)) e.currentTarget.style.borderColor = 'var(--cyberpunk-border-strong)' }"
             @mouseleave="e => e.currentTarget.style.borderColor = completedTaskIds.has(task.id) ? 'rgba(0,255,136,0.3)' : 'var(--cyberpunk-border)'"
@@ -175,7 +175,7 @@
                 <svg
                   v-if="!subscriptionStore.canAccessTask(task.tier)"
                   width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  style="opacity: 0.6; flex-shrink: 0;"
+                  style="flex-shrink: 0;"
                   :style="{ color: tierColor(task.tier) }"
                 >
                   <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
@@ -355,7 +355,8 @@ const tierLabel = (tier) => {
 const tierColor = (tier) => {
   if (tier === 'free') return '#00ff88'
   if (tier === 'launcher') return '#00d9ff'
-  if (tier === 'pro') return '#c9004f'
+  // Lighter magenta — brand #c9004f is only ~3:1 on the dark surface, too faint for small badge text
+  if (tier === 'pro') return '#ff4d8d'
   return 'var(--cyberpunk-text-secondary)'
 }
 
