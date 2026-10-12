@@ -82,6 +82,7 @@ Full implementation plan saved in Claude memory (MONEY.md).
 - GA4 Measurement ID: `G-5BC4HZ0HNB`
 - Domain: launchpilot.marketing
 - Netlify site: `launchpilot2` (ID: `e154184f-55fc-4fbf-9a5f-a8431bfc4aa8`)
+- Stripe account: `acct_1STUbg8gBja0qkMx` ("Dizid", shared with GigPilot + ResetStrategy). Local `.env` has a TEST key only.
 
 ## Origin
 Cherry-picked proven patterns from the sales project (`/home/marc/DEV/sales`).
