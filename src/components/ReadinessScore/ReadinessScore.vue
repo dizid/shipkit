@@ -147,6 +147,13 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useSeo } from '@/composables/useSeo'
+
+useSeo({
+  title: 'Launch Readiness Score',
+  description: "Answer 8 quick questions about your app's marketing readiness and get a personalized gap report. Takes 60 seconds.",
+  path: '/score'
+})
 
 // ── Questions ─────────────────────────────────────────────────────────────────
 const questions = [

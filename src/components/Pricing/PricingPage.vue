@@ -35,7 +35,14 @@
 <script setup>
 import PricingSection from '@/components/LandingPage/PricingSection.vue'
 import { useAnalytics } from '@/composables/useAnalytics'
+import { useSeo } from '@/composables/useSeo'
 import { onMounted } from 'vue'
+
+useSeo({
+  title: 'Pricing',
+  description: "Start free. Upgrade when you're ready to go all-in on your launch. 30-day money-back guarantee on all paid plans.",
+  path: '/pricing'
+})
 
 const { trackPricingView } = useAnalytics()
 

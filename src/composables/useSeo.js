@@ -11,7 +11,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
  * @param {string} [options.image]     - Absolute OG image URL (falls back to og-image.svg)
  */
 export function useSeo({ title, description, path, image }) {
-  const baseUrl = 'https://launchpilot.example.com'
+  const baseUrl = 'https://launchpilot.marketing'
   const fullUrl = `${baseUrl}${path || '/'}`
   const fullImage = image || `${baseUrl}/og-image.svg`
 
