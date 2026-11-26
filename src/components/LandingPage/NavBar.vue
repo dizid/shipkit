@@ -3,7 +3,7 @@
     <div class="navbar__inner">
       <!-- Logo -->
       <router-link to="/" class="navbar__logo">
-        <span class="navbar__logo-text">Ship</span><span class="navbar__logo-accent">Kit</span>
+        <span class="navbar__logo-text">Launch</span><span class="navbar__logo-accent">Pilot</span>
       </router-link>
 
       <!-- Desktop nav links -->

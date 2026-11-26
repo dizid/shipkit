@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const DIST = resolve(__dirname, '..', 'dist')
-const SITE_URL = 'https://launchpilot.marketing'
+const SITE_URL = 'https://launchpilot.dizid.com'
 
 const PAGES = [
   {

@@ -5,4 +5,4 @@ Disallow: /onboarding
 Disallow: /auth
 Disallow: /reset-password
 
-Sitemap: https://launchpilot.marketing/sitemap.xml
+Sitemap: https://launchpilot.dizid.com/sitemap.xml

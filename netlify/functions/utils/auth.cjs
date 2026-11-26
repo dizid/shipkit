@@ -22,6 +22,7 @@ try {
  * Allowed CORS origins
  */
 const ALLOWED_ORIGINS = [
+  'https://launchpilot.dizid.com',
   'https://launchpilot.marketing',
   'https://www.launchpilot.marketing',
   'http://localhost:3000',

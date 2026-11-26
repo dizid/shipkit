@@ -24,7 +24,7 @@
         <p class="pricing-page__faq-desc">
           Check the <router-link to="/#faq" class="pricing-page__faq-link">FAQ on the home page</router-link>
           or email us at
-          <a href="mailto:hello@launchpilot.marketing" class="pricing-page__faq-link">hello@launchpilot.marketing</a>.
+          <a href="mailto:marc@dizid.com" class="pricing-page__faq-link">marc@dizid.com</a>.
           We reply within 24 hours.
         </p>
       </div>

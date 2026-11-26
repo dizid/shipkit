@@ -97,7 +97,7 @@ exports.handler = async (event) => {
     }
 
     // Determine success/cancel URLs
-    const origin = event.headers?.origin || 'https://launchpilot.marketing'
+    const origin = event.headers?.origin || 'https://launchpilot.dizid.com'
     const successUrl = `${origin}/dashboard?checkout=success`
     const cancelUrl = `${origin}/pricing`
 

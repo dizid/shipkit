@@ -70,7 +70,7 @@ exports.handler = async (event) => {
     }
 
     // Create portal session
-    const origin = event.headers?.origin || 'https://launchpilot.marketing'
+    const origin = event.headers?.origin || 'https://launchpilot.dizid.com'
     const session = await stripe.billingPortal.sessions.create({
       customer: subData.stripe_customer_id,
       return_url: `${origin}/dashboard/settings`
