@@ -73,7 +73,7 @@ All 33 tasks defined in `src/tasks/`:
 
 ## Monetization Status
 Stripe integration NOT yet implemented. Tier gating defined in task schema only.
-AI quota enforcement exists in claude-proxy (free: 40/mo, launcher: 400/mo, pro: 400/mo).
+AI quota enforcement exists in claude-proxy (free: 40/mo, launcher: 400/mo, pro: 400/mo). Since T-0651 (2026-11-27) it lives in `netlify/functions/utils/aiQuota.cjs`: also a ceiling of 100 calls a UTC day for all users together (~$4.50 worst case), and it fails closed (count error or no Supabase client = 503, no AI call). Test: `npx vitest run netlify/functions/utils/aiQuota.test.js`.
 Full implementation plan saved in Claude memory (MONEY.md).
 
 ## Deployment

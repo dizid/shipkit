@@ -4,6 +4,7 @@
 
 const { createClient } = require('@supabase/supabase-js')
 const { verifyAuth, getCorsOrigin } = require('./utils/auth.cjs')
+const { checkAiQuota } = require('./utils/aiQuota.cjs')
 
 // Initialize Supabase client with service role for quota tracking
 // Note: These may be undefined - we check in trackAIUsage before using
@@ -167,42 +168,14 @@ exports.handler = async (event) => {
       }
     }
 
-    // Check quota before calling Claude API
-    if (userId && supabase) {
-      const startOfMonth = new Date()
-      startOfMonth.setDate(1)
-      startOfMonth.setHours(0, 0, 0, 0)
-
-      const { count, error: countError } = await supabase
-        .from('ai_usage')
-        .select('*', { count: 'exact', head: true })
-        .eq('user_id', userId)
-        .eq('app', 'launchpilot')
-        .gte('created_at', startOfMonth.toISOString())
-
-      if (!countError) {
-        // Get user's tier from subscriptions table
-        const { data: subData } = await supabase
-          .from('subscriptions')
-          .select('tier')
-          .eq('user_id', userId)
-          .eq('app', 'launchpilot')
-          .single()
-
-        const tier = subData?.tier || 'free'
-        const TIER_LIMITS = { free: 40, launcher: 400, pro: 400 }
-        const limit = TIER_LIMITS[tier] || 40
-
-        if (count >= limit) {
-          return {
-            statusCode: 429,
-            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': getCorsOrigin(event) },
-            body: JSON.stringify({
-              error: 'Monthly AI generation quota exceeded',
-              quota: { used: count, limit, tier, resetDate: startOfMonth.toISOString() }
-            })
-          }
-        }
+    // Check quota before calling Claude API: per-user monthly limit + daily
+    // ceiling for all users, fails closed (utils/aiQuota.cjs, T-0651)
+    const quota = await checkAiQuota(supabase, userId)
+    if (!quota.allowed) {
+      return {
+        statusCode: quota.status,
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': getCorsOrigin(event) },
+        body: JSON.stringify(quota.body)
       }
     }
 
