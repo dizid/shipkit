@@ -24,7 +24,8 @@ export default defineConfig(({ mode }) => {
   build: {
     target: 'esnext',
     outDir: 'dist',
-    sourcemap: true,
+    // No public source maps: they handed the full app source to anyone (T-0660)
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
